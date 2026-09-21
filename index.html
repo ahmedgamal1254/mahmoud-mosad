@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="styleguide.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /** @type {import('tailwindcss').Config} */
+        tailwind.config = {
+
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        geist: ["Geist", "sans-serif"],
+                        charlotte: ["Charlotte", "Charlotte-Regular", "sans-serif"],
+                    },
+                    colors: {
+                        "tokens-bg-bg-cards-1": "var(--tokens-bg-bg-cards-1)",
+                        "tokens-bg-bg-cards-2": "var(--tokens-bg-bg-cards-2)",
+                        "tokens-bg-bg-pages": "var(--tokens-bg-bg-pages)",
+                        "tokens-bg-button-bg-button-1": "var(--tokens-bg-button-bg-button-1)",
+                        "tokens-bg-button-bg-button-2": "var(--tokens-bg-button-bg-button-2)",
+                        "tokens-bg-button-bg-button-nav-bar": "var(--tokens-bg-button-bg-button-nav-bar)",
+                        "tokens-bg-button-bg-icon-1": "var(--tokens-bg-button-bg-icon-1)",
+                        "tokens-bg-button-bg-icon-2": "var(--tokens-bg-button-bg-icon-2)",
+                        "tokens-bg-button-bg-icon-an-button": "var(--tokens-bg-button-bg-icon-an-button)",
+                        "tokens-icon-color-color-icon-1": "var(--tokens-icon-color-color-icon-1)",
+                        "tokens-icon-color-color-icon-2": "var(--tokens-icon-color-color-icon-2)",
+                        "tokens-text-color-text-color-1": "var(--tokens-text-color-text-color-1)",
+                        "tokens-text-color-text-color-2": "var(--tokens-text-color-text-color-2)",
+                        "tokens-text-color-text-color-3": "var(--tokens-text-color-text-color-3)",
+
+                    },
+                },
+            },
+            plugins: [],
+        }
+    </script>
+</head>
+
+<body>
+    <div class="bg-[#101010] w-full min-w-[1440px] min-h-screen pb-24 flex flex-col" data-model-id="1000:910">
+        <div
+            class="flex self-center w-[1280px] h-[88px] relative mt-3.5 items-center justify-between px-2 py-5 rounded-3xl">
+            <img class="relative w-48 h-[12rem] object-contain" src="imgs/logo.svg" alt="Logo" />
+            <div class="inline-flex items-center gap-16 relative flex-[0_0_auto]">
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                    HOME</div>
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                    ABOUT</div>
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                    PROJECTS</div>
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                    RESUME</div>
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                    CONTACT</div>
+            </div>
+        </div>
+        <div
+            class="inline-flex h-[486px] w-[619px] self-center relative mt-[80px] flex-col items-center justify-center gap-6 p-8">
+            <div
+                class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-base text-center tracking-[0] leading-[normal]">
+                WELCOME IN</div>
+            <div class="flex flex-col w-[555px] items-center justify-center relative flex-[0_0_auto]">
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[80px] text-center tracking-[0] leading-[normal]">
+                    MAHMOUD</div>
+                <div
+                    class="relative w-fit [font-family:'Geist',Helvetica] font-semibold text-white text-8xl tracking-[0] leading-[normal]">
+                    PORTFOLIO</div>
+            </div>
+            <p
+                class="relative w-fit font-charlotte [font-family:'Charlotte','Charlotte-Regular',Helvetica] font-normal text-white text-5xl tracking-[0] leading-[normal] whitespace-nowrap">
+                Graphic Designer &amp; UI UX Designer</p>
+            <div
+                class="flex w-[348px] items-center justify-center gap-2.5 px-7 py-4 relative flex-[0_0_auto] bg-white rounded-3xl">
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-[#101010] text-xl text-center tracking-[0] leading-[normal]">
+                    VIEW MY WORK</div>
+            </div>
+        </div>
+        <div class="flex h-[580px] w-[1157px] self-center relative mt-[140px] flex-col items-center gap-[78px]">
+            <div
+                class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                About Me</div>
+            <div class="flex items-center gap-20 relative self-stretch w-full flex-[0_0_auto]">
+                <div class="relative w-[400px] h-[440px] rounded-3xl bg-[url(imgs/about.svg)] bg-cover bg-[50%_50%]">
+                </div>
+                <p
+                    class="relative w-[677px] [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-xl tracking-[1.60px] leading-[22px]">
+                    <span class="font-semibold tracking-[0.32px]">I’m Mahmoud,</span>
+                    <span class="text-base tracking-[0.20px]"> A Graphic Designer And Ui/ux Designer With Over 3 Years
+                        Of Professional Experience In Visual Design. I Specialize In Transforming Ideas Into Meaningful
+                        Visual Experiences That Combine Creativity, Strategy, And Clear Communication.<br />throughout
+                        My Career, I’ve Worked Across Branding, Social Media Design, Logo Design, And Print Design,
+                        Developing A Strong Understanding Of Visual Hierarchy, Typography, Composition, Color, And
+                        Visual Storytelling. I’m Proficient In Adobe Photoshop And Adobe Illustrator, Which I Use To
+                        Create Impactful And Polished Visual Solutions.<br />currently, I’m Expanding My Expertise Into
+                        Ui/ux Design, Bringing My Strong Visual Design Background Into The Digital Product Space. I Use
+                        Figma To Create Clean, Intuitive, And User-centered Interfaces, While Focusing On Usability,
+                        Structure, User Flows, And Seamless Digital Experiences.<br />i Believe Great Design Is More
+                        Than Just Aesthetics — It’s About Solving Problems, Communicating Ideas, And Creating
+                        Experiences That People Can Understand, Use, And Remember.</span>
+                </p>
+            </div>
+        </div>
+        <div class="flex self-center w-[1280px] min-h-[662px] relative mt-[80px] flex-col items-center gap-[60px]">
+            <div
+                class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                My Projects</div>
+            <div class="flex flex-col items-start gap-8 relative self-stretch w-full flex-[0_0_auto]">
+                <div class="flex flex-col w-[607px] items-start gap-4 relative flex-[0_0_auto]">
+                    <div
+                        class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-5xl tracking-[0] leading-[normal]">
+                        Ui Ux Projects</div>
+                    <p
+                        class="relative self-stretch [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-[22px]">
+                        See Some Of The Projects That I Have Worked On</p>
+                </div>
+                <div id="ui-ux-projects-container"
+                    class="grid grid-cols-3 gap-6 relative self-stretch w-full flex-[0_0_auto]">
+                    <div
+                        class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                        <div
+                            class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                        </div>
+                        <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website E-commerce Clothing</div>
+                                <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Design</div>
+                                    <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Website</div>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Designer</div>
+                                </div>
+                            </div>
+                            <img class="relative w-6 h-6 aspect-[1]"
+                                src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                        <div
+                            class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                        </div>
+                        <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website E-commerce Clothing</div>
+                                <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Design</div>
+                                    <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Website</div>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Designer</div>
+                                </div>
+                            </div>
+                            <img class="relative w-6 h-6 aspect-[1]"
+                                src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                        <div
+                            class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                        </div>
+                        <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website E-commerce Clothing</div>
+                                <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Design</div>
+                                    <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Website</div>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Designer</div>
+                                </div>
+                            </div>
+                            <img class="relative w-6 h-6 aspect-[1]"
+                                src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex min-h-[980px] w-[1280px] self-center relative mt-[80px] flex-col items-start gap-8">
+            <div class="flex flex-col w-[607px] items-start gap-4 relative flex-[0_0_auto]">
+                <div
+                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-5xl tracking-[0] leading-[normal]">
+                    Graphic Design Projects</div>
+                <p
+                    class="relative self-stretch [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-[22px]">
+                    See Some Of The Projects That I Have Worked On</p>
+            </div>
+            <div id="graphic-projects-container"
+                class="grid grid-cols-3 gap-6 relative self-stretch w-full flex-[0_0_auto]">
+                <div
+                    class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                    <div
+                        class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                    </div>
+                    <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                            <div
+                                class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                Website E-commerce Clothing</div>
+                            <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Ui Ux Design</div>
+                                <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website</div>
+                            </div>
+                            <div
+                                class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Ui Ux Designer</div>
+                            </div>
+                        </div>
+                        <img class="relative w-6 h-6 aspect-[1]"
+                            src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                    <div
+                        class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                    </div>
+                    <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                            <div
+                                class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                Website E-commerce Clothing</div>
+                            <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Ui Ux Design</div>
+                                <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website</div>
+                            </div>
+                            <div
+                                class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Ui Ux Designer</div>
+                            </div>
+                        </div>
+                        <img class="relative w-6 h-6 aspect-[1]"
+                            src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                    <div
+                        class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                    </div>
+                    <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                            <div
+                                class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                Website E-commerce Clothing</div>
+                            <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Ui Ux Design</div>
+                                <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website</div>
+                            </div>
+                            <div
+                                class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Ui Ux Designer</div>
+                            </div>
+                        </div>
+                        <img class="relative w-6 h-6 aspect-[1]"
+                            src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                    </div>
+
+                    <div
+                        class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                        <div
+                            class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                        </div>
+                        <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website E-commerce Clothing</div>
+                                <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Design</div>
+                                    <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Website</div>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Designer</div>
+                                </div>
+                            </div>
+                            <img class="relative w-6 h-6 aspect-[1]"
+                                src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                        <div
+                            class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                        </div>
+                        <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website E-commerce Clothing</div>
+                                <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Design</div>
+                                    <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Website</div>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Designer</div>
+                                </div>
+                            </div>
+                            <img class="relative w-6 h-6 aspect-[1]"
+                                src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-[411px] items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-lg overflow-hidden">
+                        <div
+                            class="relative self-stretch w-full h-[262px] rounded-md bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png)] bg-cover bg-[50%_50%]">
+                        </div>
+                        <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="inline-flex flex-col items-start gap-3 relative flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-white text-base tracking-[0] leading-[22px] whitespace-nowrap">
+                                    Website E-commerce Clothing</div>
+                                <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Design</div>
+                                    <div class="relative w-1 h-1 bg-[#8d8c89] rounded-sm aspect-[1]"></div>
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Website</div>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center gap-2.5 px-3 py-1 relative flex-[0_0_auto] bg-[#303030] rounded-3xl">
+                                    <div
+                                        class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-sm tracking-[0] leading-[22px] whitespace-nowrap">
+                                        Ui Ux Designer</div>
+                                </div>
+                            </div>
+                            <img class="relative w-6 h-6 aspect-[1]"
+                                src="https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="h-[62px] w-[189px] self-center mt-[80px] [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                Resume</div>
+            <div class="flex self-center w-[1280px] relative mt-[60px] flex-col items-start gap-16">
+                <div
+                    class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-5xl tracking-[0] leading-[normal]">
+                    Experience</div>
+                <div id="experience-list"
+                    class="flex flex-col items-start gap-[50px] relative self-stretch w-full flex-[0_0_auto]">
+                    <div class="flex flex-col items-start gap-[33px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex items-center gap-8 relative flex-[0_0_auto]">
+                            <img class="relative w-[120px] h-[120px] rounded-3xl aspect-[1] object-cover"
+                                src="imgs/IXperience.svg" alt="IXperience" />
+                            <div
+                                class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                                Xperience</div>
+                        </div>
+                        <div class="flex flex-col items-start gap-6 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    UI / UX Designer (Internship)</div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    Oct2026</div>
+                            </div>
+                            <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-white text-2xl tracking-[0] leading-[normal]">
+                                    Learning &amp; Responsibilities:</div>
+                                <ul
+                                    class="relative self-stretch list-disc pl-6 [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-8">
+                                    <li>Applying UX Research, User Flows &amp; Wireframing.</li>
+                                    <li>Designing intuitive UI interfaces using Figma.</li>
+                                    <li>Creating interactive prototypes and user-centered experiences.</li>
+                                    <li>Applying UX principles and usability best practices.</li>
+                                    <li>Collaborating with the team to improve design solutions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="relative self-stretch w-full h-0.5"
+                        src="https://c.animaapp.com/faqgcqcH/img/line-13.svg" />
+                    <div class="flex flex-col items-start gap-[33px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex items-center gap-8 relative flex-[0_0_auto]">
+                            <div
+                                class="relative w-[120px] h-[120px] rounded-3xl aspect-[1] bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-115-3@2x.png)] bg-cover bg-[50%_50%]">
+                            </div>
+                            <div
+                                class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                                URAM IT-EG</div>
+                        </div>
+                        <div class="flex flex-col items-start gap-6 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    Mid Level GRAPHIC DESIGNER</div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    SEP2025 – Present</div>
+                            </div>
+                            <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-white text-2xl tracking-[0] leading-[normal]">
+                                    Responsibilities:</div>
+                                <ul
+                                    class="relative self-stretch list-disc pl-6 [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-8">
+                                    <li>Designed visual identities and branding systems for diverse brands.</li>
+                                    <li>Created engaging and consistent social media designs.</li>
+                                    <li>Developed logos and key visual assets aligned with brand identity.</li>
+                                    <li>Designed creative digital &amp; print marketing materials.</li>
+                                    <li>Maintained strong visual consistency, typography, composition, and brand
+                                        guidelines.</li>
+                                    <li>Collaborated with teams to translate concepts into high-quality visual
+                                        solutions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="relative self-stretch w-full h-0.5"
+                        src="https://c.animaapp.com/faqgcqcH/img/line-13.svg" />
+                    <div class="flex flex-col items-start gap-[33px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex items-center gap-8 relative flex-[0_0_auto]">
+                            <div
+                                class="bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-115-1@2x.png)] relative w-[120px] h-[120px] rounded-3xl aspect-[1] bg-cover bg-[50%_50%]">
+                            </div>
+                            <div
+                                class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                                WELL DESIGN DIGITAL MARKETING</div>
+                        </div>
+                        <div class="flex flex-col items-start gap-6 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    Mid Level GRAPHIC DESIGNER</div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    Jan2024 – Jul2025</div>
+                            </div>
+                            <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-white text-2xl tracking-[0] leading-[normal]">
+                                    Responsibilities:</div>
+                                <ul
+                                    class="relative self-stretch list-disc pl-6 [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-8">
+                                    <li>Designed visual identities and branding systems for diverse brands.</li>
+                                    <li>Created engaging and consistent social media designs.</li>
+                                    <li>Developed logos and key visual assets aligned with brand identity.</li>
+                                    <li>Designed creative digital &amp; print marketing materials.</li>
+                                    <li>Maintained strong visual consistency, typography, composition, and brand
+                                        guidelines.</li>
+                                    <li>Collaborated with teams to translate concepts into high-quality visual
+                                        solutions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="relative self-stretch w-full h-0.5"
+                        src="https://c.animaapp.com/faqgcqcH/img/line-13.svg" />
+                    <div class="flex flex-col items-start gap-[33px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div class="inline-flex items-center gap-8 relative flex-[0_0_auto]">
+                            <div
+                                class="bg-[url(https://c.animaapp.com/faqgcqcH/img/frame-115-2@2x.png)] relative w-[120px] h-[120px] rounded-3xl aspect-[1] bg-cover bg-[50%_50%]">
+                            </div>
+                            <div
+                                class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-5xl text-center tracking-[0] leading-[normal]">
+                                LHH DIGITAL MARKETING</div>
+                        </div>
+                        <div class="flex flex-col items-start gap-6 relative self-stretch w-full flex-[0_0_auto]">
+                            <div class="flex items-start justify-between relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    Junior GRAPHIC DESIGNER</div>
+                                <div
+                                    class="relative w-fit mt-[-1.00px] [font-family:'Geist',Helvetica] font-bold text-white text-[32px] tracking-[0] leading-[normal]">
+                                    Mar2022 – Feb2023</div>
+                            </div>
+                            <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+                                <div
+                                    class="relative self-stretch mt-[-1.00px] [font-family:'Geist',Helvetica] font-medium text-white text-2xl tracking-[0] leading-[normal]">
+                                    Responsibilities:</div>
+                                <ul
+                                    class="relative self-stretch list-disc pl-6 [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-8">
+                                    <li>Created social media designs for digital platforms.</li>
+                                    <li>Assisted in developing visual identities and branding materials.</li>
+                                    <li>Designed marketing and promotional materials for digital and print.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+</body>
+
+</html>

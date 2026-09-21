@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "company": "Xperience",
+    "logo": "imgs/IXperience.svg",
+    "role": "UI / UX Designer (Internship)",
+    "period": "Oct2026",
+    "sectionTitle": "Learning & Responsibilities:",
+    "responsibilities": [
+      "Applying UX Research, User Flows & Wireframing.",
+      "Designing intuitive UI interfaces using Figma.",
+      "Creating interactive prototypes and user-centered experiences.",
+      "Applying UX principles and usability best practices.",
+      "Collaborating with the team to improve design solutions."
+    ]
+  },
+  {
+    "id": 2,
+    "company": "URAM IT-EG",
+    "logo": "https://c.animaapp.com/faqgcqcH/img/frame-115-3@2x.png",
+    "role": "Mid Level GRAPHIC DESIGNER",
+    "period": "SEP2025 – Present",
+    "sectionTitle": "Responsibilities:",
+    "responsibilities": [
+      "Designed visual identities and branding systems for diverse brands.",
+      "Created engaging and consistent social media designs.",
+      "Developed logos and key visual assets aligned with brand identity.",
+      "Designed creative digital & print marketing materials.",
+      "Maintained strong visual consistency, typography, composition, and brand guidelines.",
+      "Collaborated with teams to translate concepts into high-quality visual solutions."
+    ]
+  },
+  {
+    "id": 3,
+    "company": "WELL DESIGN DIGITAL MARKETING",
+    "logo": "https://c.animaapp.com/faqgcqcH/img/frame-115-1@2x.png",
+    "role": "Mid Level GRAPHIC DESIGNER",
+    "period": "Jan2024 – Jul2025",
+    "sectionTitle": "Responsibilities:",
+    "responsibilities": [
+      "Designed visual identities and branding systems for diverse brands.",
+      "Created engaging and consistent social media designs.",
+      "Developed logos and key visual assets aligned with brand identity.",
+      "Designed creative digital & print marketing materials.",
+      "Maintained strong visual consistency, typography, composition, and brand guidelines.",
+      "Collaborated with teams to translate concepts into high-quality visual solutions."
+    ]
+  },
+  {
+    "id": 4,
+    "company": "LHH DIGITAL MARKETING",
+    "logo": "https://c.animaapp.com/faqgcqcH/img/frame-115-2@2x.png",
+    "role": "Junior GRAPHIC DESIGNER",
+    "period": "Mar2022 – Feb2023",
+    "sectionTitle": "Responsibilities:",
+    "responsibilities": [
+      "Created social media designs for digital platforms.",
+      "Assisted in developing visual identities and branding materials.",
+      "Designed marketing and promotional materials for digital and print."
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+:root {
+    --tokens-bg-bg-pages: rgba(233, 241, 252, 1);
+    --tokens-bg-bg-cards-1: rgba(45, 89, 240, 1);
+    --tokens-bg-bg-cards-2: rgba(255, 255, 255, 1);
+    --tokens-bg-button-bg-button-1: rgba(9, 11, 23, 1);
+    --tokens-bg-button-bg-button-2: rgba(250, 247, 248, 1);
+    --tokens-bg-button-bg-button-nav-bar: rgba(9, 11, 23, 1);
+    --tokens-bg-button-bg-icon-1: rgba(27, 27, 37, 1);
+    --tokens-bg-button-bg-icon-2: rgba(45, 89, 240, 1);
+    --tokens-bg-button-bg-icon-an-button: rgba(233, 241, 252, 1);
+    --tokens-text-color-text-color-1: rgba(0, 0, 0, 1);
+    --tokens-text-color-text-color-2: rgba(110, 110, 110, 1);
+    --tokens-text-color-text-color-3: rgba(250, 247, 248, 1);
+    --tokens-icon-color-color-icon-1: rgba(255, 255, 255, 1);
+    --tokens-icon-color-color-icon-2: rgba(113, 110, 110, 1);
+}
