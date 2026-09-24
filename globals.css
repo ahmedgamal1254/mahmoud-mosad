@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -54,3 +55,106 @@ a {
     font-optical-sizing: auto;
     font-style: normal;
 }
+=======
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Charlotte Font */
+@font-face {
+    font-family: "Charlotte";
+    src: url("fonts/Charlotte/Web-PS/Charlotte.woff2") format("woff2"),
+         url("./fonts/Charlotte/Web-PS/Charlotte.woff2") format("woff2"),
+         url("fonts/Charlotte/Web-PS/Charlotte.otf") format("opentype"),
+         url("./fonts/Charlotte/Web-PS/Charlotte.otf") format("opentype"),
+         url("fonts/Charlotte/OpenType-PS/Charlotte.otf") format("opentype"),
+         url("fonts/Charlotte/OpenType-TT/Charlotte.ttf") format("truetype"),
+         url("fonts/Charlotte/charlotte-vmyly.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Charlotte-Regular";
+    src: url("fonts/Charlotte/Web-PS/Charlotte.woff2") format("woff2"),
+         url("./fonts/Charlotte/Web-PS/Charlotte.woff2") format("woff2"),
+         url("fonts/Charlotte/Web-PS/Charlotte.otf") format("opentype"),
+         url("./fonts/Charlotte/Web-PS/Charlotte.otf") format("opentype"),
+         url("fonts/Charlotte/OpenType-PS/Charlotte.otf") format("opentype"),
+         url("fonts/Charlotte/OpenType-TT/Charlotte.ttf") format("truetype"),
+         url("fonts/Charlotte/charlotte-vmyly.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0px;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(141, 140, 137);
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:visited {
+    color: rgb(141, 140, 137);
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* Navigation link styling & active state */
+.nav-link,
+.nav-link:visited {
+    color: rgb(141, 140, 137) !important;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+.nav-link.active,
+.nav-link.active:visited {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Prevent background scroll when mobile drawer is open */
+body.drawer-open {
+    overflow: hidden !important;
+}
+
+.geist {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.charlotte {
+    font-family: "Charlotte", "Charlotte-Regular", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+/* Header top and bottom padding */
+#main-header {
+    /* Navbar top and bottom padding */
+}
+>>>>>>> 5f909aa (edits)

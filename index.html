@@ -10,6 +10,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="styleguide.css">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+>>>>>>> 5f909aa (edits)
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         /** @type {import('tailwindcss').Config} */
@@ -49,6 +54,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="bg-[#101010] w-full min-w-[1440px] min-h-screen pb-24 flex flex-col" data-model-id="1000:910">
         <div
             class="flex self-center w-[1280px] h-[88px] relative mt-3.5 items-center justify-between px-2 py-5 rounded-3xl">
@@ -574,6 +580,404 @@
             </div>
         </div>
         <script src="app.js"></script>
+=======
+    <div class="bg-[#101010] w-full min-h-screen flex flex-col overflow-x-hidden" data-model-id="1000:910">
+        <!-- Mobile Navigation Drawer Backdrop -->
+        <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+        <!-- Mobile Navigation Drawer (Opens from Left) -->
+        <aside id="mobile-drawer" class="fixed top-0 left-0 bottom-0 w-[300px] max-w-[85vw] bg-[#141414] border-r border-white/10 z-50 flex flex-col justify-between p-6 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+            <div class="flex flex-col gap-6">
+                <!-- Drawer Top Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                    <a href="#home" class="mobile-nav-link flex items-center">
+                        <img class="h-9 w-auto object-contain" src="imgs/logo.svg" alt="Mahmoud Mosad Logo" />
+                    </a>
+                    <button id="mobile-drawer-close" type="button" aria-label="Close menu" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Drawer Navigation Links -->
+                <nav class="flex flex-col gap-2">
+                    <a href="#home" class="mobile-nav-link nav-link active flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                        HOME
+                    </a>
+                    <a href="#about" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                        ABOUT
+                    </a>
+                    <a href="#projects" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                        PROJECTS
+                    </a>
+                    <a href="#resume" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                        RESUME
+                    </a>
+                    <a href="#contact" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                        CONTACT
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Drawer Footer Socials -->
+            <div class="flex flex-col gap-4 pt-6 border-t border-white/10">
+                <span class="text-xs uppercase font-semibold text-[#8d8c89] tracking-wider [font-family:'Geist',Helvetica]">Connect</span>
+                <div class="flex items-center gap-3">
+                    <a href="https://www.behance.net" target="_blank" rel="noopener" aria-label="Behance" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 text-sm" style="color: rgb(141, 140, 137);">
+                        <i class="fa-brands fa-behance"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mahmoud-mosad-/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 text-sm" style="color: rgb(141, 140, 137);">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-[#25D366] hover:text-white border border-white/10 flex items-center justify-center transition-all duration-200 text-base" style="color: rgb(141, 140, 137);">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/mahmoud.mosad.130577" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 text-sm" style="color: rgb(141, 140, 137);">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Sticky Navigation Header -->
+        <header id="main-header" class="fixed top-0 left-0 right-0 z-40 w-full bg-[#101010]/95 backdrop-blur-md border-b border-white/5 transition-all">
+            <div class="flex items-center justify-between w-full max-w-[1280px] py-[40px] mx-auto px-4 sm:px-6">
+                <a href="#home" class="flex items-center">
+                    <img class="relative w-auto h-9 sm:h-10 md:h-10 object-contain transition-all" src="imgs/logo.svg" alt="Logo" />
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:inline-flex items-center gap-4 relative flex-[0_0_auto]">
+                    <a href="#home" class="nav-link active px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">HOME</a>
+                    <a href="#about" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">ABOUT</a>
+                    <a href="#projects" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">PROJECTS</a>
+                    <a href="#resume" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">RESUME</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">CONTACT</a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" type="button" aria-label="Open mobile menu" class="md:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div id="home"
+            class="flex min-h-[460px] sm:min-h-[500px] w-full max-w-[650px] self-center relative mt-[130px] sm:mt-[140px] md:mt-[150px] flex-col items-center justify-center gap-5 sm:gap-6 px-4 py-6 text-center">
+            <div
+                class="relative w-fit [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-xs sm:text-sm md:text-base text-center tracking-[0.2em] leading-normal uppercase">
+                WELCOME IN</div>
+            <div class="flex flex-col w-full items-center justify-center relative flex-[0_0_auto]">
+                <div
+                    class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-[2.8rem] sm:text-6xl md:text-[80px] text-center tracking-tight leading-[1.05]">
+                    MAHMOUD</div>
+                <div
+                    class="relative w-fit [font-family:'Geist',Helvetica] font-semibold text-white text-[3rem] sm:text-7xl md:text-8xl text-center tracking-tight leading-[1.05]">
+                    PORTFOLIO</div>
+            </div>
+            <p
+                class="relative w-full max-w-[620px] font-charlotte [font-family:'Charlotte','Charlotte-Regular',Helvetica] font-normal text-white text-2xl sm:text-4xl md:text-5xl text-center tracking-[0] leading-snug">
+                Graphic Designer &amp; UI UX Designer</p>
+            <a href="#projects"
+                class="inline-flex w-auto items-center justify-center px-[32px] py-[16px] relative flex-[0_0_auto] bg-white hover:bg-[#eaeaea] transition-all rounded-full cursor-pointer shadow-lg hover:scale-105 duration-200 mt-2">
+                <span
+                    class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-[#101010] text-base sm:text-lg text-center tracking-wide whitespace-nowrap">
+                    VIEW MY WORK</span>
+            </a>
+        </div>
+        <!-- About Me Section (Grid System) -->
+        <div id="about" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[140px] px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                <!-- Section Header -->
+                <div class="lg:col-span-12 text-center mb-2">
+                    <h2 class="[font-family:'Geist',Helvetica] font-bold text-white text-4xl sm:text-5xl tracking-tight leading-normal">
+                        About Me
+                    </h2>
+                </div>
+
+                <!-- Image Column (5 Cols) -->
+                <div class="lg:col-span-5 flex justify-center w-full">
+                    <div class="w-full max-w-[360px] sm:max-w-[400px] aspect-[400/440] rounded-3xl bg-[url(imgs/about.svg)] bg-cover bg-[50%_50%] border border-white/5 shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Bio Text Column (7 Cols) -->
+                <div class="lg:col-span-7 flex flex-col justify-center w-full">
+                    <p class="[font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-[16px] tracking-wide leading-relaxed">
+                        <span class="font-semibold text-white">I’m Mahmoud,</span>
+                        A Graphic Designer And Ui/ux Designer With Over 3 Years Of Professional Experience In Visual Design. I Specialize In Transforming Ideas Into Meaningful Visual Experiences That Combine Creativity, Strategy, And Clear Communication.<span id="about-dots" class="lg:hidden">...</span>
+                    </p>
+                    <div id="about-more-text" class="hidden lg:flex flex-col gap-4 mt-4 [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-[16px] tracking-wide leading-relaxed">
+                        <p>
+                            Throughout My Career, I’ve Worked Across Branding, Social Media Design, Logo Design, And Print Design, Developing A Strong Understanding Of Visual Hierarchy, Typography, Composition, Color, And Visual Storytelling. I’m Proficient In Adobe Photoshop And Adobe Illustrator, Which I Use To Create Impactful And Polished Visual Solutions.
+                        </p>
+                        <p>
+                            Currently, I’m Expanding My Expertise Into Ui/ux Design, Bringing My Strong Visual Design Background Into The Digital Product Space. I Use Figma To Create Clean, Intuitive, And User-centered Interfaces, While Focusing On Usability, Structure, User Flows, And Seamless Digital Experiences.
+                        </p>
+                        <p>
+                            I Believe Great Design Is More Than Just Aesthetics — It’s About Solving Problems, Communicating Ideas, And Creating Experiences That People Can Understand, Use, And Remember.
+                        </p>
+                    </div>
+                    <button id="about-readmore-btn" type="button" onclick="toggleAboutReadMore()" class="lg:hidden mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium text-sm transition-all cursor-pointer w-fit [font-family:'Geist',Helvetica] border border-white/10 group">
+                        <span id="about-readmore-text">Read More</span>
+                        <i id="about-readmore-icon" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Projects Section (Grid System) -->
+        <div id="projects" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[100px] px-4 sm:px-6 flex flex-col gap-10 sm:gap-14">
+            <!-- Section Header -->
+            <div class="text-center w-full">
+                <h2 class="[font-family:'Geist',Helvetica] font-bold text-white text-4xl sm:text-5xl tracking-tight leading-normal">
+                    My Projects
+                </h2>
+            </div>
+
+            <!-- UI UX Projects -->
+            <div class="flex flex-col items-start gap-6 sm:gap-8 w-full">
+                <div class="flex flex-col items-start gap-2 sm:gap-3 w-full">
+                    <h3 class="[font-family:'Geist',Helvetica] font-semibold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
+                        Ui Ux Projects
+                    </h3>
+                    <p class="[font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-base sm:text-lg">
+                        See Some Of The Projects That I Have Worked On
+                    </p>
+                </div>
+                <!-- 3-Column Responsive Grid -->
+                <div id="ui-ux-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"></div>
+            </div>
+        </div>
+        <!-- Graphic Design Projects (Grid System) -->
+        <div class="w-full max-w-[1280px] mx-auto relative mt-12 sm:mt-16 px-4 sm:px-6 flex flex-col gap-6 sm:gap-8">
+            <div class="flex flex-col items-start gap-2 sm:gap-3 w-full">
+                <h3 class="[font-family:'Geist',Helvetica] font-semibold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
+                    Graphic Design Projects
+                </h3>
+                <p class="[font-family:'Geist',Helvetica] font-medium text-[#8d8c89] text-base sm:text-lg">
+                    See Some Of The Projects That I Have Worked On
+                </p>
+            </div>
+            <div id="graphic-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"></div>
+        </div>
+
+        <!-- Resume Section (Grid System) -->
+        <div id="resume" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[100px] px-4 sm:px-6 flex flex-col gap-10 sm:gap-14">
+            <div class="text-center w-full">
+                <h2 class="[font-family:'Geist',Helvetica] font-bold text-white text-4xl sm:text-5xl tracking-tight leading-normal">
+                    Resume
+                </h2>
+            </div>
+            <div class="flex flex-col items-start gap-6 sm:gap-10 w-full">
+                <h3 class="[font-family:'Geist',Helvetica] font-bold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
+                    Experience
+                </h3>
+                <div id="experience-list" class="flex flex-col gap-8 sm:gap-12 w-full"></div>
+            </div>
+        </div>
+
+        <!-- Contact Us Section -->
+            <div id="contact" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[120px] px-4 sm:px-6 flex flex-col items-center gap-8 sm:gap-12">
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <div class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-5xl tracking-[0] leading-[normal]">
+                        Contact Us
+                    </div>
+                    <p class="relative [font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-xl tracking-[0] leading-[22px]">
+                        Have a project in mind or need creative design solutions? Let's connect!
+                    </p>
+                </div>
+
+                <!-- 2-Column Contact Container -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-stretch">
+                    
+                    <!-- Left Column: Direct Contact Info (5 cols) -->
+                    <div class="lg:col-span-5 flex flex-col justify-between gap-6 p-5 sm:p-6 md:p-8 bg-[#1a1a1a] rounded-2xl border border-white/5 shadow-xl">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex flex-col gap-2">
+                                <h3 class="[font-family:'Geist',Helvetica] font-bold text-white text-2xl tracking-[0]">
+                                    Let's Connect Directly
+                                </h3>
+                                <p class="[font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-base leading-relaxed">
+                                    Have a project in mind or need creative design &amp; UI/UX solutions? Reach out directly or send an inquiry.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col gap-4">
+                                <!-- Phone / WhatsApp Card -->
+                                <a href="https://wa.link/65p25n" target="_blank" rel="noopener" class="group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] hover:bg-[#2a2a2a] border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer min-w-0">
+                                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#1a1a1a] flex items-center justify-center text-white group-hover:scale-105 transition-transform shrink-0 border border-white/10">
+                                        <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0 flex-1">
+                                        <span class="text-xs uppercase tracking-wider text-[#8d8c89] font-medium [font-family:'Geist',Helvetica]">Phone / WhatsApp</span>
+                                        <span class="text-white font-semibold text-sm sm:text-base [font-family:'Geist',Helvetica] group-hover:text-white transition-colors truncate">+20 100 685 1519</span>
+                                    </div>
+                                </a>
+
+                                <!-- Email Card (Responsive inside frame) -->
+                                <a href="mailto:mahmoudmosad632@gmail.com" class="group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] hover:bg-[#2a2a2a] border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer min-w-0 overflow-hidden">
+                                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#1a1a1a] flex items-center justify-center text-white group-hover:scale-105 transition-transform shrink-0 border border-white/10">
+                                        <i class="fa-solid fa-envelope text-xl text-white"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0 overflow-hidden flex-1">
+                                        <span class="text-xs uppercase tracking-wider text-[#8d8c89] font-medium [font-family:'Geist',Helvetica]">Email Address</span>
+                                        <span class="text-white font-semibold text-xs min-[380px]:text-sm sm:text-base [font-family:'Geist',Helvetica] group-hover:text-white transition-colors break-all leading-snug">mahmoudmosad632@gmail.com</span>
+                                    </div>
+                                </a>
+
+                                <!-- Location Card -->
+                                <div class="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] border border-white/5 min-w-0">
+                                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#1a1a1a] flex items-center justify-center text-white shrink-0 border border-white/10">
+                                        <i class="fa-solid fa-location-dot text-xl text-white"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0 flex-1">
+                                        <span class="text-xs uppercase tracking-wider text-[#8d8c89] font-medium [font-family:'Geist',Helvetica]">Location / Address</span>
+                                        <span class="text-white font-semibold text-sm sm:text-base [font-family:'Geist',Helvetica] leading-snug">Cairo, Egypt • Available Worldwide (Remote)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+
+                    <!-- Right Column: Contact Form (7 cols) -->
+                    <div class="lg:col-span-7 p-5 sm:p-6 md:p-8 bg-[#1a1a1a] rounded-2xl border border-white/5 shadow-xl flex flex-col justify-between">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="flex flex-col gap-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="flex flex-col gap-2">
+                                    <label for="name" class="text-sm font-semibold text-white [font-family:'Geist',Helvetica]">Your Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-[#242424] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-[#666] focus:border-white focus:outline-none transition-colors text-sm [font-family:'Geist',Helvetica]" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label for="email" class="text-sm font-semibold text-white [font-family:'Geist',Helvetica]">Email Address</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-[#242424] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-[#666] focus:border-white focus:outline-none transition-colors text-sm [font-family:'Geist',Helvetica]" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-2">
+                                <label for="project-type" class="text-sm font-semibold text-white [font-family:'Geist',Helvetica]">Project Type</label>
+                                <div class="relative">
+                                    <select id="project-type" name="projectType" required class="w-full bg-[#242424] border border-white/10 rounded-xl px-4 py-3.5 text-white appearance-none focus:border-white focus:outline-none transition-colors text-sm [font-family:'Geist',Helvetica] cursor-pointer">
+                                        <option value="" disabled selected class="bg-[#1a1a1a] text-[#777]">Select a service...</option>
+                                        <option value="UI/UX Design" class="bg-[#1a1a1a] text-white">UI / UX Design</option>
+                                        <option value="Graphic Design" class="bg-[#1a1a1a] text-white">Graphic Design</option>
+                                        <option value="Brand Identity & Guidelines" class="bg-[#1a1a1a] text-white">Brand Identity &amp; Guidelines</option>
+                                        <option value="Social Media Campaign Designs" class="bg-[#1a1a1a] text-white">Social Media Campaign Designs</option>
+                                        <option value="Packaging & Label Design" class="bg-[#1a1a1a] text-white">Packaging &amp; Label Design</option>
+                                        <option value="Marketing Materials" class="bg-[#1a1a1a] text-white">Print &amp; Digital Marketing</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#8d8c89]">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-2">
+                                <label for="message" class="text-sm font-semibold text-white [font-family:'Geist',Helvetica]">Your Business Goals</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell me what you'd like to achieve (e.g., automate student enrollment, build a vendor marketplace, create luxury perfume packaging...)" class="w-full bg-[#242424] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-[#666] focus:border-white focus:outline-none transition-colors text-sm resize-none [font-family:'Geist',Helvetica]"></textarea>
+                            </div>
+
+                            <div class="flex items-center justify-between pt-2">
+                                <button type="submit" class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-[#101010] hover:bg-[#eaeaea] font-bold text-base rounded-2xl transition-all duration-300 shadow-lg hover:shadow-white/10 cursor-pointer [font-family:'Geist',Helvetica]">
+                                    <span>Contact Us</span>
+                                    <svg class="w-5 h-5 text-[#101010]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                    </svg>
+                                </button>
+                                <span id="form-status" class="text-sm [font-family:'Geist',Helvetica] text-emerald-400 hidden"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Section -->
+            <footer class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[140px] border-t border-white/10 pt-12 sm:pt-16 px-4 sm:px-6">
+                <!-- Footer Multi-Column Grid (Reference Image 2) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 w-full">
+                    <!-- Col 1: Bio (5 cols) -->
+                    <div class="lg:col-span-5 flex flex-col gap-4">
+                        <span class="[font-family:'Geist',Helvetica] font-bold text-white text-2xl tracking-[0]">
+                            Mahmoud Mosad
+                        </span>
+                        <p class="[font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-base leading-relaxed max-w-[420px]">
+                            Graphic Designer &amp; UI/UX Designer with over 3 years of professional experience transforming complex visual challenges into high-performance, polished digital and print solutions.
+                        </p>
+                    </div>
+
+                    <!-- Col 2: Services (3 cols) -->
+                    <div class="lg:col-span-3 flex flex-col gap-4">
+                        <span class="[font-family:'Geist',Helvetica] font-semibold text-white text-lg tracking-[0]">
+                            Services
+                        </span>
+                        <ul class="flex flex-col gap-2.5 [font-family:'Geist',Helvetica] text-base">
+                            <li><a href="#projects" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">UI / UX Design</a></li>
+                            <li><a href="#projects" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Brand Identity &amp; Guidelines</a></li>
+                            <li><a href="#projects" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Social Media Designs</a></li>
+                            <li><a href="#projects" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Packaging &amp; Label Design</a></li>
+                            <li><a href="#projects" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Print &amp; Digital Materials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Navigation (2 cols) -->
+                    <div class="lg:col-span-2 flex flex-col gap-4">
+                        <span class="[font-family:'Geist',Helvetica] font-semibold text-white text-lg tracking-[0]">
+                            Navigation
+                        </span>
+                        <ul class="flex flex-col gap-2.5 [font-family:'Geist',Helvetica] text-base">
+                            <li><a href="#home" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Home</a></li>
+                            <li><a href="#about" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">About Me</a></li>
+                            <li><a href="#projects" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Projects</a></li>
+                            <li><a href="#resume" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Resume</a></li>
+                            <li><a href="#contact" class="hover:text-white transition-colors" style="color: rgb(141, 140, 137);">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 4: Connect / Social (2 cols) -->
+                    <div class="lg:col-span-2 flex flex-col gap-4">
+                        <span class="[font-family:'Geist',Helvetica] font-semibold text-white text-lg tracking-[0]">
+                            Connect
+                        </span>
+                        <div class="flex items-center gap-3">
+                            <!-- Behance -->
+                            <a href="https://www.behance.net" target="_blank" rel="noopener" aria-label="Behance" class="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 hover:scale-110 text-base" style="color: rgb(141, 140, 137);">
+                                <i class="fa-brands fa-behance"></i>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/mahmoud-mosad-/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 hover:scale-110 text-base" style="color: rgb(141, 140, 137);">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-[#25D366] hover:text-white border border-white/10 flex items-center justify-center transition-all duration-200 hover:scale-110 text-lg" style="color: rgb(141, 140, 137);">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/mahmoud.mosad.130577" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 hover:scale-110 text-base" style="color: rgb(141, 140, 137);">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Sub-Bar -->
+                <div class="border-t border-white/10 py-8 flex items-center justify-center w-full [font-family:'Geist',Helvetica]">
+                    <div class="text-sm font-medium tracking-wider text-center" style="color: rgb(141, 140, 137);">
+                        &copy; 2025 MAHMOUD MOSAD. All Rights Reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Floating WhatsApp Widget (Reference Image 2 & 3) -->
+        <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-8 right-8 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+            <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+        </a>
+
+    <!-- Fancybox Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="app.js"></script>
+>>>>>>> 5f909aa (edits)
 </body>
 
 </html>

@@ -30,72 +30,214 @@
     "role": "Ui Ux Designer",
     "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Logo Design & Brand Identity",
+    "type": "graphic",
+    "category": "Graphic Design",
+    "platform": "Logos & Visual Identity",
+    "role": "Graphic Designer",
+    "image": "imgs/projects/logos/1.jpg",
+    "link": "#",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/logos/1.jpg",
+      "imgs/projects/logos/2.jpg",
+      "imgs/projects/logos/3.jpg",
+      "imgs/projects/logos/4.jpg",
+      "imgs/projects/logos/5.jpg",
+      "imgs/projects/logos/6.jpg",
+      "imgs/projects/logos/7.jpg",
+      "imgs/projects/logos/8.jpg",
+      "imgs/projects/logos/9.jpg",
+      "imgs/projects/logos/10.jpg",
+      "imgs/projects/logos/11.jpg",
+      "imgs/projects/logos/12.jpg",
+      "imgs/projects/logos/13.jpg",
+      "imgs/projects/logos/14.jpg",
+      "imgs/projects/logos/15.jpg",
+      "imgs/projects/logos/16.jpg",
+      "imgs/projects/logos/17.jpg",
+      "imgs/projects/logos/18.jpg",
+      "imgs/projects/logos/19.png",
+      "imgs/projects/logos/20.jpg"
+    ]
   },
   {
     "id": 4,
-    "title": "Brand Identity & Guidelines",
+    "title": "CapNest Real Estate & Investment",
     "type": "graphic",
     "category": "Graphic Design",
-    "platform": "Branding",
+    "platform": "Social Media Design",
     "role": "Graphic Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
+    "image": "imgs/projects/building/IMG-20260924-WA0087.jpg.webp",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/building/IMG-20260924-WA0087.jpg.webp",
+      "imgs/projects/building/IMG-20260924-WA0088.jpg.webp",
+      "imgs/projects/building/IMG-20260924-WA0089.jpg.webp",
+      "imgs/projects/building/IMG-20260924-WA0090.jpg.webp",
+      "imgs/projects/building/IMG-20260924-WA0091.jpg.webp"
+    ]
   },
   {
     "id": 5,
-    "title": "Social Media Campaign Designs",
+    "title": "Eshaal Luxury Perfumes",
     "type": "graphic",
     "category": "Graphic Design",
-    "platform": "Social Media",
+    "platform": "Social Media Design",
     "role": "Graphic Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
+    "image": "imgs/projects/eshaal/IMG-20260924-WA0000.jpg.webp",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/eshaal/IMG-20260924-WA0000.jpg.webp",
+      "imgs/projects/eshaal/IMG-20260924-WA0001.jpg.webp",
+      "imgs/projects/eshaal/IMG-20260924-WA0002.jpg.webp",
+      "imgs/projects/eshaal/IMG-20260924-WA0003.jpg.webp",
+      "imgs/projects/eshaal/IMG-20260924-WA0004.jpg.webp",
+      "imgs/projects/eshaal/IMG-20260924-WA0005.jpg.webp"
+    ]
   },
   {
     "id": 6,
-    "title": "Packaging & Label Design",
+    "title": "Sanaa Jewelry & Diamonds",
     "type": "graphic",
     "category": "Graphic Design",
-    "platform": "Packaging",
+    "platform": "Social Media Design",
     "role": "Graphic Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
+    "image": "imgs/projects/gallery/IMG-20260924-WA0075.jpg.webp",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/gallery/IMG-20260924-WA0075.jpg.webp",
+      "imgs/projects/gallery/IMG-20260924-WA0074.jpg.webp",
+      "imgs/projects/gallery/IMG-20260924-WA0076.jpg.webp",
+      "imgs/projects/gallery/IMG-20260924-WA0077.jpg.webp",
+      "imgs/projects/gallery/IMG-20260924-WA0078.jpg.webp"
+    ]
   },
   {
     "id": 7,
-    "title": "Creative Marketing Materials",
+    "title": "Raheeq Natural Honey",
     "type": "graphic",
     "category": "Graphic Design",
-    "platform": "Print & Digital",
+    "platform": "Social Media Design",
     "role": "Graphic Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
+    "image": "imgs/projects/honey/IMG-20260924-WA0011.jpg.webp",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/honey/IMG-20260924-WA0011.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0012.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0013.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0014.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0015.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0016.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0017.jpg.webp",
+      "imgs/projects/honey/IMG-20260924-WA0018.jpg.webp"
+    ]
   },
   {
     "id": 8,
-    "title": "Logo Design & Key Visuals",
+    "title": "Lavior Luxury Perfumes",
     "type": "graphic",
     "category": "Graphic Design",
-    "platform": "Logo Design",
+    "platform": "Social Media Design",
     "role": "Graphic Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
+    "image": "imgs/projects/lavior/IMG-20260924-WA0068.jpg.webp",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/lavior/IMG-20260924-WA0068.jpg.webp",
+      "imgs/projects/lavior/IMG-20260924-WA0069.jpg.webp",
+      "imgs/projects/lavior/IMG-20260924-WA0070.jpg.webp",
+      "imgs/projects/lavior/IMG-20260924-WA0071.jpg.webp",
+      "imgs/projects/lavior/IMG-20260924-WA0072.jpg.webp",
+      "imgs/projects/lavior/IMG-20260924-WA0073.jpg.webp"
+    ]
   },
   {
     "id": 9,
-    "title": "Typography & Editorial Layouts",
+    "title": "Khamsat Phones Store",
     "type": "graphic",
     "category": "Graphic Design",
-    "platform": "Print Design",
+    "platform": "Social Media Design",
     "role": "Graphic Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
+    "image": "imgs/projects/mobiles/IMG-20260214-WA0027.jpg.webp",
     "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/mobiles/IMG-20260214-WA0027.jpg.webp",
+      "imgs/projects/mobiles/IMG-20260214-WA0028.jpg.webp",
+      "imgs/projects/mobiles/IMG-20260214-WA0029.jpg.webp",
+      "imgs/projects/mobiles/IMG-20260214-WA0030.jpg.webp"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Nrwek Pure Water Campaign",
+    "type": "graphic",
+    "category": "Graphic Design",
+    "platform": "Social Media Design",
+    "role": "Graphic Designer",
+    "image": "imgs/projects/ouva/IMG-20260924-WA0055.jpg.webp",
+    "link": "#",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/ouva/IMG-20260924-WA0055.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0056.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0057.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0058.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0059.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0060.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0061.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0062.jpg.webp",
+      "imgs/projects/ouva/IMG-20260924-WA0063.jpg.webp"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Randa Perfumes Campaign",
+    "type": "graphic",
+    "category": "Graphic Design",
+    "platform": "Social Media Design",
+    "role": "Graphic Designer",
+    "image": "imgs/projects/randa/IMG-20260924-WA0034.jpg.webp",
+    "link": "#",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/randa/IMG-20260924-WA0034.jpg.webp",
+      "imgs/projects/randa/IMG-20260924-WA0035.jpg.webp",
+      "imgs/projects/randa/IMG-20260924-WA0036.jpg.webp",
+      "imgs/projects/randa/IMG-20260924-WA0037.jpg.webp",
+      "imgs/projects/randa/IMG-20260924-WA0038.jpg.webp",
+      "imgs/projects/randa/IMG-20260924-WA0039.jpg.webp",
+      "imgs/projects/randa/IMG-20260924-WA0040.jpg.webp"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Labara Watches & Casio Vintage",
+    "type": "graphic",
+    "category": "Graphic Design",
+    "platform": "Social Media Design",
+    "role": "Graphic Designer",
+    "image": "imgs/projects/watches/IMG-20260924-WA0019.jpg.webp",
+    "link": "#",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "images": [
+      "imgs/projects/watches/IMG-20260924-WA0019.jpg.webp",
+      "imgs/projects/watches/IMG-20260924-WA0020.jpg.webp",
+      "imgs/projects/watches/IMG-20260924-WA0021.jpg.webp",
+      "imgs/projects/watches/IMG-20260924-WA0022.jpg.webp",
+      "imgs/projects/watches/IMG-20260924-WA0023.jpg.webp"
+    ]
   }
 ]

@@ -1,0 +1,9 @@
+/* Webfont: Charlotte */@font-face {
+    font-family: 'Charlotte';
+    src: url('Charlotte.woff2') format('woff2'), /* Modern Browsers */
+         url('Charlotte.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
