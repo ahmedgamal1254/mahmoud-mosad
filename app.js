@@ -421,33 +421,33 @@ function renderExperiences(experiences) {
 
   const html = experiences.map((exp, index) => {
     const isLast = index === experiences.length - 1;
-    const dividerHtml = isLast ? '' : `<div class="w-full h-px bg-white/10 my-6 sm:my-10"></div>`;
+    const dividerHtml = isLast ? '' : `<div class="w-full h-px bg-white/10 my-8 sm:my-12"></div>`;
 
     return `
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 w-full items-start">
-          <!-- Col 1: Company Logo & Name (4 cols) -->
-          <div class="lg:col-span-4 flex items-center gap-4 sm:gap-6">
-              <img class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl aspect-[1] object-cover border border-white/10 shrink-0 bg-[#242424]" src="${exp.logo}" alt="${exp.company}" />
-              <div class="[font-family:'Geist',Helvetica] font-bold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight">
+      <div class="flex flex-col items-start gap-5 sm:gap-6 relative w-full">
+          <!-- Company Logo & Name -->
+          <div class="inline-flex items-center gap-3.5 sm:gap-5 relative">
+              <img class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl aspect-[1] object-cover shrink-0 border border-white/10 bg-[#242424]" src="${exp.logo}" alt="${exp.company}" />
+              <div class="[font-family:'Geist',Helvetica] font-bold text-white text-xl sm:text-2xl lg:text-[26px] tracking-tight uppercase">
                   ${exp.company}
               </div>
           </div>
 
-          <!-- Col 2: Role, Period & Responsibilities (8 cols) -->
-          <div class="lg:col-span-8 flex flex-col gap-4 w-full">
-              <div class="flex sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
-                  <div class="[font-family:'Geist',Helvetica] font-bold text-white text-md sm:text-2xl lg:text-3xl leading-snug">
+          <!-- Role, Period & Responsibilities -->
+          <div class="flex flex-col items-start gap-3.5 sm:gap-5 relative w-full">
+              <div class="flex items-center justify-between gap-3 relative w-full">
+                  <div class="[font-family:'Geist',Helvetica] font-bold text-white text-sm sm:text-lg lg:text-[22px] leading-snug">
                       ${exp.role}
                   </div>
-                  <div class="[font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-base sm:text-lg whitespace-nowrap">
+                  <div class="[font-family:'Geist',Helvetica] font-semibold text-white text-xs sm:text-base lg:text-[17px] whitespace-nowrap shrink-0">
                       ${exp.period}
                   </div>
               </div>
-              <div class="flex flex-col gap-2.5">
-                  <div class="[font-family:'Geist',Helvetica] font-medium text-white text-lg sm:text-xl">
+              <div class="flex flex-col items-start gap-2 relative w-full">
+                  <div class="[font-family:'Geist',Helvetica] font-medium text-white text-sm sm:text-base">
                       ${exp.sectionTitle || 'Responsibilities:'}
                   </div>
-                  <ul class="list-disc pl-5 sm:pl-6 [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-base sm:text-lg leading-relaxed space-y-1.5">
+                  <ul class="list-disc pl-5 sm:pl-6 [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-sm sm:text-base leading-relaxed space-y-1.5">
                       ${exp.responsibilities.map(item => `<li>${item}</li>`).join('')}
                   </ul>
               </div>
