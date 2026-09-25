@@ -435,8 +435,8 @@ function renderExperiences(experiences) {
 
           <!-- Col 2: Role, Period & Responsibilities (8 cols) -->
           <div class="lg:col-span-8 flex flex-col gap-4 w-full">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
-                  <div class="[font-family:'Geist',Helvetica] font-bold text-white text-xl sm:text-2xl lg:text-3xl leading-snug">
+              <div class="flex sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
+                  <div class="[font-family:'Geist',Helvetica] font-bold text-white text-md sm:text-2xl lg:text-3xl leading-snug">
                       ${exp.role}
                   </div>
                   <div class="[font-family:'Geist',Helvetica] font-semibold text-[#8d8c89] text-base sm:text-lg whitespace-nowrap">
