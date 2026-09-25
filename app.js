@@ -436,7 +436,7 @@ function renderExperiences(experiences) {
           <!-- Role, Period & Responsibilities -->
           <div class="flex flex-col items-start gap-3.5 sm:gap-5 relative w-full">
               <div class="flex items-center justify-between gap-3 relative w-full">
-                  <div class="[font-family:'Geist',Helvetica] font-bold text-white text-sm sm:text-lg lg:text-[22px] leading-snug">
+                  <div class="[font-family:'Geist',Helvetica] font-bold text-white text-[1rem] sm:text-lg lg:text-[22px] leading-snug">
                       ${exp.role}
                   </div>
                   <div class="[font-family:'Geist',Helvetica] font-semibold text-white text-xs sm:text-base lg:text-[17px] whitespace-nowrap shrink-0">
