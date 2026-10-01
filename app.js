@@ -305,9 +305,9 @@ let allLoadedProjects = [...FALLBACK_PROJECTS];
 function openProjectFancybox(projectId) {
   const project = allLoadedProjects.find(p => p.id === projectId);
   if (!project) return;
-  // UI/UX projects open in a separate page (Behance case study), NOT Fancybox modal!
+  // UI/UX projects open in the current tab, NOT Fancybox modal!
   if (project.type === 'ui-ux') {
-    window.open(project.link || `project.html?id=${project.id}`, '_blank');
+    window.location.href = project.link || `project.html?id=${project.id}`;
     return;
   }
   const images = (project.images && project.images.length > 0) ? project.images : [project.image];
@@ -369,17 +369,17 @@ function createProjectCardHtml(project) {
       </span>`;
   }
 
-  // Click behavior: UI/UX opens in a separate page (Behance case study), Graphic projects open modal slider
+  // Click behavior: UI/UX opens in the same tab, Graphic projects open modal slider
   const cardOnClick = isUiUx
-    ? `window.open('${project.link || `project.html?id=${project.id}`}', '_blank')`
+    ? `window.location.href='${project.link || `project.html?id=${project.id}`}'`
     : `openProjectFancybox(${project.id})`;
 
   const actionButton = isUiUx
-    ? `<a href="${project.link || `project.html?id=${project.id}`}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Open case study" title="Open Behance Case Study" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+    ? `<a href="${project.link || `project.html?id=${project.id}`}" onclick="event.stopPropagation()" aria-label="Open case study" title="Open Case Study" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
          <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Open case study" />
        </a>`
     : ((project.link && project.link !== '#')
-      ? `<a href="${project.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Visit project" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+      ? `<a href="${project.link}" onclick="event.stopPropagation()" aria-label="Visit project" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
            <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Visit project" />
          </a>`
       : `<button type="button" onclick="event.stopPropagation(); openProjectFancybox(${project.id})" aria-label="View project slider" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
