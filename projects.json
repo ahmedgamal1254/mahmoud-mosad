@@ -2,38 +2,32 @@
   {
     "id": 1,
     "title": "Website E-commerce Clothing",
+    "slug": "clothes",
     "type": "ui-ux",
     "category": "Ui Ux Design",
     "platform": "Website",
     "role": "Ui Ux Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
-    "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "image": "imgs/projects/uiux/clothes/index.png",
+    "frameImage": "imgs/projects/uiux/clothes/frame.webp",
+    "link": "project.html?id=1",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "overview": "منصة أزياء إلكترونية حديثة تهدف إلى توفير تجربة تسوق سهلة وسريعة وممتعة للملابس للرجال والنساء والأطفال",
+    "tools": ["Figma", "Adobe Illustrator", "UI/UX Research"]
   },
   {
     "id": 2,
-    "title": "Mobile App Fitness Tracker",
+    "title": "Katkooti App Redesign",
+    "slug": "katkoty",
     "type": "ui-ux",
     "category": "Ui Ux Design",
     "platform": "Mobile App",
     "role": "Ui Ux Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
-    "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
-  },
-  {
-    "id": 3,
-    "title": "Dashboard Analytics Platform",
-    "type": "ui-ux",
-    "category": "Ui Ux Design",
-    "platform": "Web App",
-    "role": "Ui Ux Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
-    "link": "#",
+    "image": "imgs/projects/uiux/katkoty/index.png",
+    "frameImage": "imgs/projects/uiux/katkoty/frame.webp",
+    "link": "project.html?id=2",
     "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
-    "images": [
-      "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png"
-    ]
+    "overview": "UI/UX Case Study: turning a child's daily Islamic habits into a game they want to play.",
+    "tools": ["Figma", "Adobe Illustrator", "Gamification UI"]
   },
   {
     "id": 13,

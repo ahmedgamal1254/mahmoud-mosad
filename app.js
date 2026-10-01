@@ -66,38 +66,32 @@ const FALLBACK_PROJECTS = [
   {
     "id": 1,
     "title": "Website E-commerce Clothing",
+    "slug": "clothes",
     "type": "ui-ux",
     "category": "Ui Ux Design",
     "platform": "Website",
     "role": "Ui Ux Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
-    "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
+    "image": "imgs/projects/uiux/clothes/index.png",
+    "frameImage": "imgs/projects/uiux/clothes/frame.webp",
+    "link": "project.html?id=1",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "overview": "منصة أزياء إلكترونية حديثة تهدف إلى توفير تجربة تسوق سهلة وسريعة وممتعة للملابس للرجال والنساء والأطفال",
+    "tools": ["Figma", "Adobe Illustrator", "UI/UX Research"]
   },
   {
     "id": 2,
-    "title": "Mobile App Fitness Tracker",
+    "title": "Katkooti App Redesign",
+    "slug": "katkoty",
     "type": "ui-ux",
     "category": "Ui Ux Design",
     "platform": "Mobile App",
     "role": "Ui Ux Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
-    "link": "#",
-    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg"
-  },
-  {
-    "id": 3,
-    "title": "Dashboard Analytics Platform",
-    "type": "ui-ux",
-    "category": "Ui Ux Design",
-    "platform": "Web App",
-    "role": "Ui Ux Designer",
-    "image": "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png",
-    "link": "#",
+    "image": "imgs/projects/uiux/katkoty/index.png",
+    "frameImage": "imgs/projects/uiux/katkoty/frame.webp",
+    "link": "project.html?id=2",
     "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
-    "images": [
-      "https://c.animaapp.com/faqgcqcH/img/frame-106-8@2x.png"
-    ]
+    "overview": "UI/UX Case Study: turning a child's daily Islamic habits into a game they want to play.",
+    "tools": ["Figma", "Adobe Illustrator", "Gamification UI"]
   },
   {
     "id": 13,
@@ -311,6 +305,11 @@ let allLoadedProjects = [...FALLBACK_PROJECTS];
 function openProjectFancybox(projectId) {
   const project = allLoadedProjects.find(p => p.id === projectId);
   if (!project) return;
+  // UI/UX projects open in a separate page (Behance case study), NOT Fancybox modal!
+  if (project.type === 'ui-ux') {
+    window.open(project.link || `project.html?id=${project.id}`, '_blank');
+    return;
+  }
   const images = (project.images && project.images.length > 0) ? project.images : [project.image];
 
   if (typeof Fancybox !== 'undefined') {
@@ -350,26 +349,45 @@ function openProjectFancybox(projectId) {
 }
 
 function createProjectCardHtml(project) {
+  const isUiUx = project.type === 'ui-ux';
   const images = (project.images && project.images.length > 0) ? project.images : [project.image];
   const coverImage = project.image || images[0];
   const imagesCount = images.length;
-  const countBadgeHtml = imagesCount > 1 
-    ? `<span class="inline-flex items-center gap-1.5 text-xs text-[#e0e0e0] bg-[#141414]/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 font-medium shadow-md">
-         <svg class="w-3.5 h-3.5 text-[#8d8c89]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-         ${imagesCount} Designs
-       </span>`
-    : '';
 
-  const actionButton = (project.link && project.link !== '#')
-    ? `<a href="${project.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Visit project" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
-         <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Visit project" />
+  let countBadgeHtml = '';
+  if (isUiUx) {
+    countBadgeHtml = `
+      <span class="inline-flex items-center gap-1.5 text-xs text-[#e0e0e0] bg-[#141414]/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 font-medium shadow-md">
+        <i class="fa-brands fa-behance text-[#8d8c89]"></i>
+        Case Study
+      </span>`;
+  } else if (imagesCount > 1) {
+    countBadgeHtml = `
+      <span class="inline-flex items-center gap-1.5 text-xs text-[#e0e0e0] bg-[#141414]/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 font-medium shadow-md">
+        <svg class="w-3.5 h-3.5 text-[#8d8c89]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        ${imagesCount} Designs
+      </span>`;
+  }
+
+  // Click behavior: UI/UX opens in a separate page (Behance case study), Graphic projects open modal slider
+  const cardOnClick = isUiUx
+    ? `window.open('${project.link || `project.html?id=${project.id}`}', '_blank')`
+    : `openProjectFancybox(${project.id})`;
+
+  const actionButton = isUiUx
+    ? `<a href="${project.link || `project.html?id=${project.id}`}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Open case study" title="Open Behance Case Study" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+         <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Open case study" />
        </a>`
-    : `<button type="button" onclick="event.stopPropagation(); openProjectFancybox(${project.id})" aria-label="View project slider" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
-         <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="View project slider" />
-       </button>`;
+    : ((project.link && project.link !== '#')
+      ? `<a href="${project.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Visit project" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+           <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Visit project" />
+         </a>`
+      : `<button type="button" onclick="event.stopPropagation(); openProjectFancybox(${project.id})" aria-label="View project slider" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+           <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="View project slider" />
+         </button>`);
 
   return `
-    <div onclick="openProjectFancybox(${project.id})" class="group cursor-pointer flex flex-col w-full items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 hover:scale-[1.01] hover:shadow-xl transition-all duration-300">
+    <div onclick="${cardOnClick}" class="group cursor-pointer flex flex-col w-full items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 hover:scale-[1.01] hover:shadow-xl transition-all duration-300">
         <div class="relative self-stretch w-full h-[220px] sm:h-[262px] rounded-lg bg-cover bg-[50%_50%] overflow-hidden bg-[#242424]" style="background-image: url('${coverImage}');">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
             ${countBadgeHtml ? `<div class="absolute top-3 right-3 shadow-md">${countBadgeHtml}</div>` : ''}

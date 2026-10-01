@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title id="page-title">UI/UX Case Study - Mahmoud Mosad Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="styleguide.css">
+    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        geist: ["Geist", "sans-serif"],
+                        charlotte: ["Charlotte", "Charlotte-Regular", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+        }
+        .presentation-frame {
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+        }
+        /* Appreciation pulse animation */
+        @keyframes pulse-heart {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+        .liked-pulse {
+            animation: pulse-heart 0.35s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#101010] text-white overflow-x-hidden">
+    <!-- Mobile Navigation Drawer Backdrop -->
+    <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Mobile Navigation Drawer (Opens from Left) -->
+    <aside id="mobile-drawer" class="fixed top-0 left-0 bottom-0 w-[300px] max-w-[85vw] bg-[#141414] border-r border-white/10 z-50 flex flex-col justify-between p-6 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+        <div class="flex flex-col gap-6">
+            <!-- Drawer Top Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <a href="index.html#home" class="mobile-nav-link flex items-center">
+                    <img class="h-9 w-auto object-contain" src="imgs/logo.svg" alt="Mahmoud Mosad Logo" />
+                </a>
+                <button id="mobile-drawer-close" type="button" aria-label="Close menu" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Drawer Navigation Links -->
+            <nav class="flex flex-col gap-2">
+                <a href="index.html#home" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                    HOME
+                </a>
+                <a href="index.html#about" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                    ABOUT
+                </a>
+                <a href="index.html#projects" class="mobile-nav-link nav-link active flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                    PROJECTS
+                </a>
+                <a href="index.html#resume" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                    RESUME
+                </a>
+                <a href="index.html#contact" class="mobile-nav-link nav-link flex items-center pl-6 pr-4 py-3 rounded-xl [font-family:'Geist',Helvetica] font-medium text-base tracking-wider uppercase">
+                    CONTACT
+                </a>
+            </nav>
+        </div>
+
+        <!-- Drawer Footer Socials -->
+        <div class="flex flex-col gap-4 pt-6 border-t border-white/10">
+            <span class="text-xs uppercase font-semibold text-[#8d8c89] tracking-wider [font-family:'Geist',Helvetica]">Connect</span>
+            <div class="flex items-center gap-3">
+                <a href="https://www.behance.net" target="_blank" rel="noopener" aria-label="Behance" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 text-sm" style="color: rgb(141, 140, 137);">
+                    <i class="fa-brands fa-behance"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mahmoud-mosad-/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 text-sm" style="color: rgb(141, 140, 137);">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-[#25D366] hover:text-white border border-white/10 flex items-center justify-center transition-all duration-200 text-base" style="color: rgb(141, 140, 137);">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/mahmoud.mosad.130577" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200 text-sm" style="color: rgb(141, 140, 137);">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sticky Navigation Header (Original Style) -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 w-full bg-[#101010]/95 backdrop-blur-md border-b border-white/5 transition-all">
+        <div class="flex items-center justify-between w-full max-w-[1280px] py-[40px] mx-auto px-4 sm:px-6">
+            <a href="index.html#home" class="flex items-center">
+                <img class="relative w-auto h-9 sm:h-10 md:h-10 object-contain transition-all" src="imgs/logo.svg" alt="Logo" />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:inline-flex items-center gap-4 relative flex-[0_0_auto]">
+                <a href="index.html#home" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">HOME</a>
+                <a href="index.html#about" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">ABOUT</a>
+                <a href="index.html#projects" class="nav-link active px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">PROJECTS</a>
+                <a href="index.html#resume" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">RESUME</a>
+                <a href="index.html#contact" class="nav-link px-4 py-2 rounded-full [font-family:'Geist',Helvetica] font-medium text-sm tracking-wider uppercase">CONTACT</a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" type="button" aria-label="Open mobile menu" class="md:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Behance Presentation Content -->
+    <main class="w-full flex flex-col items-center flex-1 mt-[120px] sm:mt-[140px] md:mt-[150px]">
+        <!-- Project Hero Header Section -->
+        <section class="w-full max-w-[1280px] mx-auto pt-10 sm:pt-14 pb-8 sm:pb-12 px-4 sm:px-8 text-center flex flex-col items-center">
+            <!-- Category Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#242424] border border-white/10 text-[#8d8c89] text-xs sm:text-sm font-medium uppercase tracking-wider mb-4">
+                <i class="fa-brands fa-behance text-[#8d8c89]"></i>
+                <span class="text-white">UI/UX Case Study Presentation</span>
+            </div>
+
+            <!-- Main Project Title -->
+            <h1 id="hero-project-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-[900px] leading-tight">
+                Project Title
+            </h1>
+
+            <!-- Project Subtitle / Arabic Description -->
+            <p id="hero-project-subtitle" class="mt-4 text-base sm:text-lg lg:text-xl text-[#8d8c89] max-w-[760px] leading-relaxed font-normal">
+                Project description goes here.
+            </p>
+
+            <!-- Metadata Info Pills Bar -->
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1a1a1a] border border-white/10 text-[#8d8c89]">
+                    <span class="text-[#777]">Role:</span>
+                    <span id="hero-role" class="font-semibold text-white">UI/UX Designer</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1a1a1a] border border-white/10 text-[#8d8c89]">
+                    <span class="text-[#777]">Platform:</span>
+                    <span id="hero-platform" class="font-semibold text-white">Website</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1a1a1a] border border-white/10 text-[#8d8c89]">
+                    <span class="text-[#777]">Category:</span>
+                    <span id="hero-category" class="font-semibold text-white">Ui Ux Design</span>
+                </div>
+                <div id="hero-tools-container" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1a1a1a] border border-white/10 text-[#8d8c89]">
+                    <span class="text-[#777]">Tools:</span>
+                    <span id="hero-tools" class="font-semibold text-white">Figma, Illustrator</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons Bar -->
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <button type="button" onclick="toggleAppreciate()" id="hero-like-btn" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#1a1a1a] hover:bg-[#262626] border border-white/10 text-white font-semibold text-sm transition-all cursor-pointer group">
+                    <i id="hero-like-icon" class="fa-solid fa-thumbs-up text-[#8d8c89] group-hover:text-white text-base group-hover:scale-110 transition-transform"></i>
+                    <span>Appreciate</span>
+                    <span id="hero-like-count" class="px-2 py-0.5 rounded-full bg-white/10 text-xs font-bold text-white">128</span>
+                </button>
+                <a id="raw-image-link" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[#8d8c89] hover:text-white font-medium text-sm transition-all cursor-pointer" title="Open full resolution in a new tab">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    <span>View High-Res Image</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Behance Case Study Image Presentation Container -->
+        <section class="w-full bg-[#101010] py-6 sm:py-12 px-2 sm:px-6 lg:px-8 border-y border-white/5">
+            <div class="w-full max-w-[1400px] mx-auto flex flex-col items-center">
+                <!-- Case study image loaded at full crisp resolution -->
+                <div class="w-full presentation-frame rounded-xl sm:rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10 shadow-2xl">
+                    <img id="case-study-img" 
+                         src="" 
+                         alt="Case Study Presentation" 
+                         class="w-full h-auto block select-none" 
+                         loading="eager" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Behance Interaction & Appreciation Footer Section -->
+        <section class="w-full max-w-[1280px] mx-auto py-16 sm:py-24 px-4 sm:px-8 flex flex-col items-center text-center">
+            <!-- Large Behance Appreciation Card -->
+            <div class="w-full max-w-[720px] p-8 sm:p-12 rounded-3xl bg-[#1a1a1a] border border-white/10 flex flex-col items-center shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-60 h-60 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-60 h-60 bg-[#25D366]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <button type="button" onclick="toggleAppreciate()" id="big-like-btn" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#242424] hover:bg-white text-white hover:text-black flex items-center justify-center transition-all duration-300 shadow-xl border border-white/10 hover:scale-110 cursor-pointer group mb-5">
+                    <i id="big-like-icon" class="fa-solid fa-thumbs-up text-3xl sm:text-4xl text-white group-hover:text-black transition-colors"></i>
+                </button>
+                <div class="font-bold text-xl sm:text-2xl text-white">Appreciate This Project</div>
+                <p class="text-[#8d8c89] text-sm sm:text-base mt-2 max-w-[480px]">
+                    Liked this case study? Leave an appreciation or reach out to discuss your own project!
+                </p>
+
+                <!-- Direct Contact Actions -->
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5 w-full">
+                    <a href="https://wa.link/65p25n" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-bold text-sm sm:text-base transition-all shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Discuss on WhatsApp</span>
+                    </a>
+                    <a href="mailto:mahmoudmosad632@gmail.com" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-[#242424] hover:bg-[#2e2e2e] border border-white/10 text-white font-semibold text-sm sm:text-base transition-all hover:scale-105 cursor-pointer">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                        <span>Email Mahmoud</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Author Card -->
+            <div class="mt-14 w-full max-w-[720px] p-6 sm:p-8 rounded-2xl bg-[#1a1a1a] border border-white/5 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 text-center sm:text-left">
+                <img class="w-20 h-20 rounded-2xl aspect-[1] object-cover bg-[#242424] border border-white/10 shrink-0" src="imgs/about.svg" alt="Mahmoud Mosad" />
+                <div class="flex flex-col gap-2 flex-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <div class="font-bold text-white text-lg sm:text-xl">Mahmoud Mosad</div>
+                            <div class="text-[#8d8c89] text-xs sm:text-sm font-medium">Graphic Designer &amp; UI/UX Designer</div>
+                        </div>
+                        <a href="index.html#contact" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white text-white hover:text-black font-semibold text-xs sm:text-sm transition-all self-center sm:self-auto cursor-pointer">
+                            Contact Me
+                        </a>
+                    </div>
+                    <p class="text-[#8d8c89] text-xs sm:text-sm leading-relaxed mt-1">
+                        Over 3 years of experience in visual branding and UI/UX design. Transforming ideas into high-performing, user-centered digital products and creative solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Switcher: View Other Project / Back to Portfolio -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-[720px]">
+                <a id="other-project-card" href="#" class="w-full sm:flex-1 p-5 rounded-2xl bg-[#1a1a1a] hover:bg-[#222222] border border-white/5 hover:border-white/20 transition-all flex items-center justify-between group cursor-pointer text-left">
+                    <div class="flex flex-col gap-1 min-w-0">
+                        <span class="text-xs uppercase tracking-wider text-[#8d8c89] font-medium [font-family:'Geist',Helvetica]">Other Project</span>
+                        <span id="other-project-title" class="font-bold text-white text-base truncate group-hover:text-white transition-colors [font-family:'Geist',Helvetica]">Project Name</span>
+                        <span id="other-project-platform" class="text-xs text-[#8d8c89] [font-family:'Geist',Helvetica]">Platform</span>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-[#262626] group-hover:bg-[#383838] text-white flex items-center justify-center transition-all shrink-0 ml-3">
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </div>
+                </a>
+
+                <a href="index.html#projects" class="w-full sm:w-auto px-6 py-5 rounded-2xl bg-[#1a1a1a] hover:bg-white text-[#d0d0d0] hover:text-black font-bold text-sm transition-all border border-white/5 hover:border-white/20 flex items-center justify-center gap-2 group cursor-pointer whitespace-nowrap">
+                    <i class="fa-solid fa-grid-2 text-xs"></i>
+                    <span>All Projects</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full border-t border-white/10 bg-[#0a0a0a] py-8 px-4 text-center">
+        <div class="flex flex-col items-center justify-center gap-3 max-w-[1280px] mx-auto text-[#8d8c89] text-sm">
+            <div class="flex items-center gap-4">
+                <a href="https://www.behance.net" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#181818] hover:bg-white hover:text-black flex items-center justify-center text-sm transition-all" style="color: #8d8c89;"><i class="fa-brands fa-behance"></i></a>
+                <a href="https://www.linkedin.com/in/mahmoud-mosad-/" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#181818] hover:bg-white hover:text-black flex items-center justify-center text-sm transition-all" style="color: #8d8c89;"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://wa.link/65p25n" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#181818] hover:bg-[#25D366] hover:text-white flex items-center justify-center text-base transition-all" style="color: #8d8c89;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/mahmoud.mosad.130577" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#181818] hover:bg-white hover:text-black flex items-center justify-center text-sm transition-all" style="color: #8d8c89;"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <div class="text-xs text-[#777] mt-2">
+                &copy; 2025 MAHMOUD MOSAD. All Rights Reserved. UI/UX Case Study Presentation.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-8 right-8 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+        <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+    </a>
+
+    <!-- Case Study Data & Interactive Logic -->
+    <script>
+        const UIUX_PROJECTS = {
+            "1": {
+                id: 1,
+                slug: "clothes",
+                title: "Website E-commerce Clothing",
+                subtitle: "A&M Modern Fashion E-Commerce Platform UI/UX Case Study",
+                arabicOverview: "نظرة عامة على المشروع: هي منصة أزياء إلكترونية حديثة تهدف إلى توفير تجربة تسوق سهلة وسريعة وممتعة للملابس للرجال والنساء والأطفال، مع التركيز على تجربة مستخدم بصرية سهلة وموحدة وواضحة.",
+                category: "Ui Ux Design",
+                platform: "Website",
+                role: "Ui Ux Designer",
+                tools: "Figma, Adobe Illustrator, Cairo Font",
+                coverImage: "imgs/projects/uiux/clothes/index.png",
+                frameImage: "imgs/projects/uiux/clothes/frame.webp",
+                likes: 142,
+                otherProjectId: 2
+            },
+            "2": {
+                id: 2,
+                slug: "katkoty",
+                title: "Katkooti App Redesign",
+                subtitle: "Gamified Islamic Habits & Daily Tasks for Children",
+                arabicOverview: "UI/UX Case Study: turning a child's daily Islamic habits into a game they want to play. Katkooti helps children build everyday habits through small daily tasks, Quran reading progress, gratitude and rewards, guided by a friendly chick character.",
+                category: "Ui Ux Design",
+                platform: "Mobile App",
+                role: "Ui Ux Designer",
+                tools: "Figma, Adobe Illustrator, Gamification UI",
+                coverImage: "imgs/projects/uiux/katkoty/index.png",
+                frameImage: "imgs/projects/uiux/katkoty/frame.webp",
+                likes: 186,
+                otherProjectId: 1
+            }
+        };
+
+        // Aliases
+        UIUX_PROJECTS["clothes"] = UIUX_PROJECTS["1"];
+        UIUX_PROJECTS["katkoty"] = UIUX_PROJECTS["2"];
+
+        // Determine current project
+        function getProjectIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const queryId = params.get('id') || params.get('project');
+            if (queryId) return queryId;
+
+            const hash = window.location.hash.replace('#', '').trim();
+            if (hash) return hash;
+
+            return "1"; // Default to clothes
+        }
+
+        let currentProject = null;
+        let isLiked = false;
+
+        function loadProject() {
+            const rawId = getProjectIdFromUrl();
+            currentProject = UIUX_PROJECTS[rawId] || UIUX_PROJECTS["1"];
+            const otherProject = UIUX_PROJECTS[currentProject.otherProjectId];
+
+            // Update document title
+            document.title = `${currentProject.title} - Behance UI/UX Case Study | Mahmoud Mosad`;
+            
+            // Header (if present)
+            const navTitleEl = document.getElementById('nav-project-title');
+            if (navTitleEl) navTitleEl.textContent = currentProject.title;
+            const switchBtn = document.getElementById('nav-switch-project-btn');
+            const switchLabel = document.getElementById('nav-switch-label');
+            if (switchBtn && switchLabel && otherProject) {
+                switchBtn.href = `project.html?id=${otherProject.id}`;
+                switchLabel.textContent = `Next: ${otherProject.title}`;
+            }
+
+            // Hero
+            document.getElementById('hero-project-title').textContent = currentProject.title;
+            document.getElementById('hero-project-subtitle').textContent = currentProject.arabicOverview;
+            document.getElementById('hero-role').textContent = currentProject.role;
+            document.getElementById('hero-platform').textContent = currentProject.platform;
+            document.getElementById('hero-category').textContent = currentProject.category;
+            document.getElementById('hero-tools').textContent = currentProject.tools;
+            document.getElementById('hero-like-count').textContent = currentProject.likes;
+
+            // Raw image link
+            const rawImgLink = document.getElementById('raw-image-link');
+            if (rawImgLink) {
+                rawImgLink.href = currentProject.frameImage;
+            }
+
+            // Case study image
+            const imgEl = document.getElementById('case-study-img');
+            imgEl.src = currentProject.frameImage;
+            imgEl.alt = `${currentProject.title} Case Study Presentation`;
+
+            // Other project teaser card
+            if (otherProject) {
+                const otherCard = document.getElementById('other-project-card');
+                otherCard.href = `project.html?id=${otherProject.id}`;
+                document.getElementById('other-project-title').textContent = otherProject.title;
+                document.getElementById('other-project-platform').textContent = `${otherProject.category} • ${otherProject.platform}`;
+            }
+        }
+
+        function toggleAppreciate() {
+            isLiked = !isLiked;
+            const countEl = document.getElementById('hero-like-count');
+            const heroIcon = document.getElementById('hero-like-icon');
+            const bigIcon = document.getElementById('big-like-icon');
+            const bigBtn = document.getElementById('big-like-btn');
+            
+            let count = currentProject.likes + (isLiked ? 1 : 0);
+            countEl.textContent = count;
+
+            if (isLiked) {
+                heroIcon.classList.add('text-white');
+                heroIcon.classList.remove('text-[#8d8c89]');
+                bigIcon.classList.remove('text-white');
+                bigIcon.classList.add('text-black');
+                bigBtn.classList.add('bg-white');
+                bigBtn.classList.remove('bg-[#242424]');
+                bigBtn.classList.add('liked-pulse');
+            } else {
+                heroIcon.classList.remove('text-white');
+                heroIcon.classList.add('text-[#8d8c89]');
+                bigIcon.classList.add('text-white');
+                bigIcon.classList.remove('text-black');
+                bigBtn.classList.remove('bg-white');
+                bigBtn.classList.add('bg-[#242424]');
+                bigBtn.classList.remove('liked-pulse');
+            }
+        }
+
+        function initMobileDrawer() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('mobile-drawer-close');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-drawer-overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            if (!menuBtn || !drawer || !overlay) return;
+
+            function openDrawer() {
+                drawer.classList.remove('-translate-x-full');
+                drawer.classList.add('translate-x-0');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.classList.add('drawer-open');
+            }
+
+            function closeDrawer() {
+                drawer.classList.add('-translate-x-full');
+                drawer.classList.remove('translate-x-0');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.classList.remove('drawer-open');
+            }
+
+            menuBtn.addEventListener('click', openDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            overlay.addEventListener('click', closeDrawer);
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !drawer.classList.contains('-translate-x-full')) {
+                    closeDrawer();
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initMobileDrawer();
+            loadProject();
+        });
+        window.addEventListener('hashchange', loadProject);
+    </script>
+</body>
+</html>
