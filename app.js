@@ -348,7 +348,7 @@ function openProjectFancybox(projectId) {
   }
 }
 
-function createProjectCardHtml(project) {
+function createProjectCardHtml(project, index = 0) {
   const isUiUx = project.type === 'ui-ux';
   const images = (project.images && project.images.length > 0) ? project.images : [project.image];
   const coverImage = project.image || images[0];
@@ -375,20 +375,22 @@ function createProjectCardHtml(project) {
     : `openProjectFancybox(${project.id})`;
 
   const actionButton = isUiUx
-    ? `<a href="${project.link || `project.html?id=${project.id}`}" onclick="event.stopPropagation()" aria-label="Open case study" title="Open Case Study" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+    ? `<a href="${project.link || `project.html?id=${project.id}`}" onclick="event.stopPropagation()" aria-label="Open case study" title="Open Case Study" class="btn-card-action relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
          <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Open case study" />
        </a>`
     : ((project.link && project.link !== '#')
-      ? `<a href="${project.link}" onclick="event.stopPropagation()" aria-label="Visit project" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+      ? `<a href="${project.link}" onclick="event.stopPropagation()" aria-label="Visit project" class="btn-card-action relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
            <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="Visit project" />
          </a>`
-      : `<button type="button" onclick="event.stopPropagation(); openProjectFancybox(${project.id})" aria-label="View project slider" class="relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
+      : `<button type="button" onclick="event.stopPropagation(); openProjectFancybox(${project.id})" aria-label="View project slider" class="btn-card-action relative w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:bg-[#383838] transition-all cursor-pointer">
            <img class="relative w-4 h-4 aspect-[1]" src="${project.icon || 'https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg'}" alt="View project slider" />
          </button>`);
 
+  const delayClass = (index % 3 === 1) ? 'delay-100' : (index % 3 === 2) ? 'delay-200' : '';
+
   return `
-    <div onclick="${cardOnClick}" class="group cursor-pointer flex flex-col w-full items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 hover:scale-[1.01] hover:shadow-xl transition-all duration-300">
-        <div class="relative self-stretch w-full h-[220px] sm:h-[262px] rounded-lg bg-cover bg-[50%_50%] overflow-hidden bg-[#242424]" style="background-image: url('${coverImage}');">
+    <div onclick="${cardOnClick}" class="reveal-up project-card ${delayClass} group cursor-pointer flex flex-col w-full items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-white/20">
+        <div class="project-card-image relative self-stretch w-full h-[220px] sm:h-[262px] rounded-lg bg-cover bg-[50%_50%] overflow-hidden bg-[#242424]" style="background-image: url('${coverImage}');">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
             ${countBadgeHtml ? `<div class="absolute top-3 right-3 shadow-md">${countBadgeHtml}</div>` : ''}
         </div>
@@ -424,13 +426,15 @@ function renderProjects(projects) {
 
   if (uiUxContainer) {
     const uiUxList = projects.filter(p => p.type === 'ui-ux');
-    uiUxContainer.innerHTML = uiUxList.map(createProjectCardHtml).join('');
+    uiUxContainer.innerHTML = uiUxList.map((p, i) => createProjectCardHtml(p, i)).join('');
   }
 
   if (graphicContainer) {
     const graphicList = projects.filter(p => p.type === 'graphic');
-    graphicContainer.innerHTML = graphicList.map(createProjectCardHtml).join('');
+    graphicContainer.innerHTML = graphicList.map((p, i) => createProjectCardHtml(p, i)).join('');
   }
+
+  initRevealObserver();
 }
 
 function renderExperiences(experiences) {
@@ -440,9 +444,10 @@ function renderExperiences(experiences) {
   const html = experiences.map((exp, index) => {
     const isLast = index === experiences.length - 1;
     const dividerHtml = isLast ? '' : `<div class="w-full h-px bg-white/10 my-8 sm:my-12"></div>`;
+    const delayClass = index > 0 ? `delay-${Math.min(index * 100, 300)}` : '';
 
     return `
-      <div class="flex flex-col items-start gap-5 sm:gap-6 relative w-full">
+      <div class="reveal-up experience-item ${delayClass} flex flex-col items-start gap-5 sm:gap-6 relative w-full">
           <!-- Company Logo & Name -->
           <div class="inline-flex items-center gap-3.5 sm:gap-5 relative">
               <img class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl aspect-[1] object-cover shrink-0 border border-white/10 bg-[#242424]" src="${exp.logo}" alt="${exp.company}" />
@@ -476,6 +481,7 @@ function renderExperiences(experiences) {
   }).join('');
 
   container.innerHTML = html;
+  initRevealObserver();
 }
 
 function initFancybox() {
@@ -663,7 +669,80 @@ function toggleAboutReadMore() {
   }
 }
 
+// Navbar scroll transition
+function initNavbarScroll() {
+  const header = document.getElementById('main-header');
+  if (!header) return;
+
+  let ticking = false;
+
+  function updateNavbar() {
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollPos > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateNavbar();
+}
+
+// Scroll Reveal with IntersectionObserver (Continuous & Bidirectional: Top-to-Bottom and Bottom-to-Top)
+let revealObserver = null;
+const observedElements = new WeakSet();
+
+function initRevealObserver() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealElements = document.querySelectorAll(
+    '.reveal, .reveal-up, .reveal-left, .reveal-right'
+  );
+
+  if (!revealElements.length) return;
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  if (!revealObserver) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -30px 0px',
+      threshold: 0.1
+    };
+
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, observerOptions);
+  }
+
+  revealElements.forEach(el => {
+    if (!observedElements.has(el)) {
+      revealObserver.observe(el);
+      observedElements.add(el);
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initNavbarScroll();
+  initRevealObserver();
   initMobileDrawer();
   initScrollSpy();
   loadData();

@@ -54,7 +54,7 @@
 </head>
 
 <body>
-    <div class="bg-[#101010] w-full min-h-screen flex flex-col overflow-x-hidden" data-model-id="1000:910">
+    <div class="bg-[#101010] w-full min-h-screen flex flex-col overflow-x-hidden page-fade-in" data-model-id="1000:910">
         <!-- Mobile Navigation Drawer Backdrop -->
         <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
@@ -113,7 +113,7 @@
 
         <!-- Sticky Navigation Header -->
         <header id="main-header" class="fixed top-0 left-0 right-0 z-40 w-full bg-[#101010]/95 backdrop-blur-md border-b border-white/5 transition-all">
-            <div class="flex items-center justify-between w-full max-w-[1280px] py-[40px] mx-auto px-4 sm:px-6">
+            <div class="header-inner flex items-center justify-between w-full max-w-[1280px] py-[40px] mx-auto px-4 sm:px-6">
                 <a href="#home" class="flex items-center">
                     <img class="relative w-auto h-9 sm:h-10 md:h-10 object-contain transition-all" src="imgs/logo.svg" alt="Logo" />
                 </a>
@@ -138,9 +138,9 @@
         <div id="home"
             class="flex min-h-[460px] sm:min-h-[500px] w-full max-w-[650px] self-center relative mt-[130px] sm:mt-[140px] md:mt-[150px] flex-col items-center justify-center gap-5 sm:gap-6 px-4 py-6 text-center">
             <div
-                class="relative w-fit [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-xs sm:text-sm md:text-base text-center tracking-[0.2em] leading-normal uppercase">
+                class="reveal-up hero-animate-1 relative w-fit [font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-xs sm:text-sm md:text-base text-center tracking-[0.2em] leading-normal uppercase">
                 WELCOME IN</div>
-            <div class="flex flex-col w-full items-center justify-center relative flex-[0_0_auto]">
+            <div class="reveal-up delay-100 hero-animate-2 flex flex-col w-full items-center justify-center relative flex-[0_0_auto]">
                 <div
                     class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-[2.8rem] sm:text-6xl md:text-[80px] text-center tracking-tight leading-[1.05]">
                     MAHMOUD</div>
@@ -149,10 +149,10 @@
                     PORTFOLIO</div>
             </div>
             <p
-                class="relative w-full max-w-[620px] font-charlotte [font-family:'Charlotte','Charlotte-Regular',Helvetica] font-normal text-white text-2xl sm:text-4xl md:text-5xl text-center tracking-[0] leading-snug">
+                class="reveal-up delay-200 hero-animate-3 relative w-full max-w-[620px] font-charlotte [font-family:'Charlotte','Charlotte-Regular',Helvetica] font-normal text-white text-2xl sm:text-4xl md:text-5xl text-center tracking-[0] leading-snug">
                 Graphic Designer &amp; UI UX Designer</p>
             <a href="#projects"
-                class="inline-flex w-auto items-center justify-center px-[32px] py-[16px] relative flex-[0_0_auto] bg-white hover:bg-[#eaeaea] transition-all rounded-full cursor-pointer shadow-lg hover:scale-105 duration-200 mt-2">
+                class="reveal-up delay-300 hero-animate-4 btn-interactive inline-flex w-auto items-center justify-center px-[32px] py-[16px] relative flex-[0_0_auto] bg-white hover:bg-[#eaeaea] rounded-full cursor-pointer shadow-lg mt-2">
                 <span
                     class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-[#101010] text-base sm:text-lg text-center tracking-wide whitespace-nowrap">
                     VIEW MY WORK</span>
@@ -162,20 +162,20 @@
         <div id="about" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[140px] px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                 <!-- Section Header -->
-                <div class="lg:col-span-12 text-center mb-2">
+                <div class="lg:col-span-12 text-center mb-2 reveal-up">
                     <h2 class="[font-family:'Geist',Helvetica] font-bold text-white text-4xl sm:text-5xl tracking-tight leading-normal">
                         About Me
                     </h2>
                 </div>
 
                 <!-- Image Column (5 Cols) -->
-                <div class="lg:col-span-5 flex justify-center w-full">
-                    <div class="w-full max-w-[360px] sm:max-w-[400px] aspect-[400/440] rounded-3xl bg-[url(imgs/about.svg)] bg-cover bg-[50%_50%] border border-white/5 shadow-2xl">
+                <div class="lg:col-span-5 flex justify-center w-full reveal-left">
+                    <div class="about-image-card w-full max-w-[360px] sm:max-w-[400px] aspect-[400/440] rounded-3xl bg-[url(imgs/about.svg)] bg-cover bg-[50%_50%] border border-white/5 shadow-2xl">
                     </div>
                 </div>
 
                 <!-- Bio Text Column (7 Cols) -->
-                <div class="lg:col-span-7 flex flex-col justify-center w-full">
+                <div class="lg:col-span-7 flex flex-col justify-center w-full reveal-right">
                     <p class="[font-family:'Geist',Helvetica] font-normal text-[#8d8c89] text-[16px] tracking-wide leading-relaxed">
                         <span class="font-semibold text-white">I’m Mahmoud,</span>
                         A Graphic Designer And Ui/ux Designer With Over 3 Years Of Professional Experience In Visual Design. I Specialize In Transforming Ideas Into Meaningful Visual Experiences That Combine Creativity, Strategy, And Clear Communication.<span id="about-dots" class="lg:hidden">...</span>
@@ -201,7 +201,7 @@
         <!-- Projects Section (Grid System) -->
         <div id="projects" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[100px] px-4 sm:px-6 flex flex-col gap-10 sm:gap-14">
             <!-- Section Header -->
-            <div class="text-center w-full">
+            <div class="text-center w-full reveal-up">
                 <h2 class="[font-family:'Geist',Helvetica] font-bold text-white text-4xl sm:text-5xl tracking-tight leading-normal">
                     My Projects
                 </h2>
@@ -209,7 +209,7 @@
 
             <!-- UI UX Projects -->
             <div class="flex flex-col items-start gap-6 sm:gap-8 w-full">
-                <div class="flex flex-col items-start gap-2 sm:gap-3 w-full">
+                <div class="flex flex-col items-start gap-2 sm:gap-3 w-full reveal-up">
                     <h3 class="[font-family:'Geist',Helvetica] font-semibold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
                         Ui Ux Projects
                     </h3>
@@ -223,7 +223,7 @@
         </div>
         <!-- Graphic Design Projects (Grid System) -->
         <div class="w-full max-w-[1280px] mx-auto relative mt-12 sm:mt-16 px-4 sm:px-6 flex flex-col gap-6 sm:gap-8">
-            <div class="flex flex-col items-start gap-2 sm:gap-3 w-full">
+            <div class="flex flex-col items-start gap-2 sm:gap-3 w-full reveal-up">
                 <h3 class="[font-family:'Geist',Helvetica] font-semibold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
                     Graphic Design Projects
                 </h3>
@@ -236,13 +236,13 @@
 
         <!-- Resume Section (Grid System) -->
         <div id="resume" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[100px] px-4 sm:px-6 flex flex-col gap-10 sm:gap-14">
-            <div class="text-center w-full">
+            <div class="text-center w-full reveal-up">
                 <h2 class="[font-family:'Geist',Helvetica] font-bold text-white text-4xl sm:text-5xl tracking-tight leading-normal">
                     Resume
                 </h2>
             </div>
             <div class="flex flex-col items-start gap-6 sm:gap-10 w-full">
-                <h3 class="[font-family:'Geist',Helvetica] font-bold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
+                <h3 class="reveal-up [font-family:'Geist',Helvetica] font-bold text-white text-2xl sm:text-4xl md:text-5xl tracking-tight">
                     Experience
                 </h3>
                 <div id="experience-list" class="flex flex-col gap-8 sm:gap-12 w-full"></div>
@@ -251,7 +251,7 @@
 
         <!-- Contact Us Section -->
             <div id="contact" class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[120px] px-4 sm:px-6 flex flex-col items-center gap-8 sm:gap-12">
-                <div class="flex flex-col items-center gap-4 text-center">
+                <div class="flex flex-col items-center gap-4 text-center reveal-up">
                     <div class="relative w-fit [font-family:'Geist',Helvetica] font-bold text-white text-5xl tracking-[0] leading-[normal]">
                         Contact Us
                     </div>
@@ -264,7 +264,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-stretch">
                     
                     <!-- Left Column: Direct Contact Info (5 cols) -->
-                    <div class="lg:col-span-5 flex flex-col justify-between gap-6 p-5 sm:p-6 md:p-8 bg-[#1a1a1a] rounded-2xl border border-white/5 shadow-xl">
+                    <div class="lg:col-span-5 flex flex-col justify-between gap-6 p-5 sm:p-6 md:p-8 bg-[#1a1a1a] rounded-2xl border border-white/5 shadow-xl reveal-left">
                         <div class="flex flex-col gap-6">
                             <div class="flex flex-col gap-2">
                                 <h3 class="[font-family:'Geist',Helvetica] font-bold text-white text-2xl tracking-[0]">
@@ -277,7 +277,7 @@
 
                             <div class="flex flex-col gap-4">
                                 <!-- Phone / WhatsApp Card -->
-                                <a href="https://wa.link/65p25n" target="_blank" rel="noopener" class="group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] hover:bg-[#2a2a2a] border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer min-w-0">
+                                <a href="https://wa.link/65p25n" target="_blank" rel="noopener" class="contact-info-card group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] hover:bg-[#2a2a2a] border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer min-w-0">
                                     <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#1a1a1a] flex items-center justify-center text-white group-hover:scale-105 transition-transform shrink-0 border border-white/10">
                                         <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
                                     </div>
@@ -288,7 +288,7 @@
                                 </a>
 
                                 <!-- Email Card (Responsive inside frame) -->
-                                <a href="mailto:mahmoudmosad632@gmail.com" class="group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] hover:bg-[#2a2a2a] border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer min-w-0 overflow-hidden">
+                                <a href="mailto:mahmoudmosad632@gmail.com" class="contact-info-card group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-[#242424] hover:bg-[#2a2a2a] border border-white/5 hover:border-white/20 transition-all duration-300 cursor-pointer min-w-0 overflow-hidden">
                                     <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#1a1a1a] flex items-center justify-center text-white group-hover:scale-105 transition-transform shrink-0 border border-white/10">
                                         <i class="fa-solid fa-envelope text-xl text-white"></i>
                                     </div>
@@ -302,7 +302,7 @@
                     </div>
 
                     <!-- Right Column: Contact Form (7 cols) -->
-                    <div class="lg:col-span-7 p-5 sm:p-6 md:p-8 bg-[#1a1a1a] rounded-2xl border border-white/5 shadow-xl flex flex-col justify-between">
+                    <div class="lg:col-span-7 p-5 sm:p-6 md:p-8 bg-[#1a1a1a] rounded-2xl border border-white/5 shadow-xl flex flex-col justify-between reveal-right">
                         <form id="contact-form" onsubmit="handleContactSubmit(event)" class="flex flex-col gap-5">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div class="flex flex-col gap-2">
@@ -339,7 +339,7 @@
                             </div>
 
                             <div class="flex items-center justify-between pt-2">
-                                <button type="submit" class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-[#101010] hover:bg-[#eaeaea] font-bold text-base rounded-2xl transition-all duration-300 shadow-lg hover:shadow-white/10 cursor-pointer [font-family:'Geist',Helvetica]">
+                                <button type="submit" class="btn-interactive inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white text-[#101010] hover:bg-[#eaeaea] font-bold text-base rounded-2xl shadow-lg cursor-pointer [font-family:'Geist',Helvetica]">
                                     <span>Contact Us</span>
                                     <svg class="w-5 h-5 text-[#101010]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
@@ -353,7 +353,7 @@
             </div>
 
             <!-- Footer Section -->
-            <footer class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[140px] border-t border-white/10 pt-12 sm:pt-16 px-4 sm:px-6">
+            <footer class="w-full max-w-[1280px] mx-auto relative mt-16 sm:mt-24 md:mt-[140px] border-t border-white/10 pt-12 sm:pt-16 px-4 sm:px-6 reveal-up">
                 <!-- Footer Multi-Column Grid (Reference Image 2) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 w-full">
                     <!-- Col 1: Bio (5 cols) -->
@@ -430,7 +430,7 @@
         </div>
 
         <!-- Floating WhatsApp Widget (Reference Image 2 & 3) -->
-        <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-8 right-8 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+        <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="floating-whatsapp fixed bottom-8 right-8 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl">
             <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
         </a>
 

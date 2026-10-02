@@ -123,6 +123,18 @@ body.drawer-open {
     padding: 0 !important;
     line-height: 1 !important;
     overflow: hidden !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease !important;
+}
+
+.footer-social-link:hover {
+    transform: translateY(-3px) scale(1.08);
+}
+
+.footer-social-link:active {
+    transform: translateY(0) scale(0.95);
 }
 
 .footer-social-link i {
@@ -132,4 +144,322 @@ body.drawer-open {
     width: 100% !important;
     height: 100% !important;
     line-height: 1 !important;
+}
+
+/* ==========================================================================
+   Smooth Animations & Reveal Utilities
+   ========================================================================== */
+
+/* Section scroll margin for smooth anchor link jumps */
+#home,
+#about,
+#projects,
+#resume,
+#contact {
+    scroll-margin-top: 100px;
+}
+
+/* Page Load Subtle Fade */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.page-fade-in {
+    animation: pageFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero Entrance Animations */
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-animate-1 {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards;
+}
+
+.hero-animate-2 {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.hero-animate-3 {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
+}
+
+.hero-animate-4 {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+/* Scroll Reveal Classes (Vanilla IntersectionObserver - Reversible & Continuous) */
+.reveal,
+.reveal-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Triggered State */
+.reveal.is-visible,
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Stagger Delays when revealing (exit resets immediately for prompt re-animation) */
+.reveal.is-visible.delay-75,
+.reveal-up.is-visible.delay-75,
+.reveal-left.is-visible.delay-75,
+.reveal-right.is-visible.delay-75 { transition-delay: 75ms; }
+
+.reveal.is-visible.delay-100,
+.reveal-up.is-visible.delay-100,
+.reveal-left.is-visible.delay-100,
+.reveal-right.is-visible.delay-100 { transition-delay: 100ms; }
+
+.reveal.is-visible.delay-150,
+.reveal-up.is-visible.delay-150,
+.reveal-left.is-visible.delay-150,
+.reveal-right.is-visible.delay-150 { transition-delay: 150ms; }
+
+.reveal.is-visible.delay-200,
+.reveal-up.is-visible.delay-200,
+.reveal-left.is-visible.delay-200,
+.reveal-right.is-visible.delay-200 { transition-delay: 200ms; }
+
+.reveal.is-visible.delay-250,
+.reveal-up.is-visible.delay-250,
+.reveal-left.is-visible.delay-250,
+.reveal-right.is-visible.delay-250 { transition-delay: 250ms; }
+
+.reveal.is-visible.delay-300,
+.reveal-up.is-visible.delay-300,
+.reveal-left.is-visible.delay-300,
+.reveal-right.is-visible.delay-300 { transition-delay: 300ms; }
+
+/* Sticky Navbar Scroll Transition */
+#main-header {
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#main-header .header-inner {
+    transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#main-header.scrolled {
+    background-color: rgba(16, 16, 16, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+#main-header.scrolled .header-inner {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+}
+
+/* Interactive Buttons */
+.btn-interactive,
+button[type="submit"],
+#about-readmore-btn {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.btn-interactive:hover,
+button[type="submit"]:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px -4px rgba(255, 255, 255, 0.18);
+}
+
+.btn-interactive:active,
+button[type="submit"]:active,
+#about-readmore-btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+#about-readmore-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile Menu & Drawer Buttons */
+#mobile-menu-btn,
+#mobile-drawer-close {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#mobile-menu-btn:hover,
+#mobile-drawer-close:hover {
+    transform: scale(1.04);
+}
+
+#mobile-menu-btn:active,
+#mobile-drawer-close:active {
+    transform: scale(0.95);
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s ease,
+                background-color 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 14px 30px -4px rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp:active {
+    transform: translateY(0) scale(0.96);
+}
+
+/* Project Cards Hover & Interaction */
+.project-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.project-card:active {
+    transform: translateY(-1px) scale(0.995);
+}
+
+/* Project Card Image Subtle Scale */
+.project-card-image {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card-image {
+    transform: scale(1.025);
+}
+
+/* Project Card Action Button */
+.btn-card-action {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.btn-card-action:hover {
+    transform: scale(1.1);
+}
+
+.btn-card-action:active {
+    transform: scale(0.92);
+}
+
+/* About Me Image Card */
+.about-image-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+}
+
+.about-image-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.contact-info-card:active {
+    transform: translateY(0) scale(0.99);
+}
+
+/* Experience Items Subtle Interaction */
+.experience-item {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-item:hover {
+    transform: translateX(4px);
+}
+
+/* Form Inputs Focus Transition */
+input, textarea, select {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal,
+    .reveal-up,
+    .reveal-left,
+    .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
