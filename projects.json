@@ -30,6 +30,21 @@
     "tools": ["Figma", "Adobe Illustrator", "Gamification UI"]
   },
   {
+    "id": 3,
+    "title": "Snake - Music Streaming App",
+    "slug": "music",
+    "type": "ui-ux",
+    "category": "Ui Ux Design",
+    "platform": "Mobile App",
+    "role": "Ui Ux Designer",
+    "image": "imgs/projects/uiux/music/index.webp",
+    "frameImage": "imgs/projects/uiux/music/frame.webp",
+    "link": "project.html?id=3",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "overview": "Snake is a next-gen music streaming app designed to deliver immersive listening experiences with a sleek, intuitive and emotion-driven interface.",
+    "tools": ["Figma", "Adobe Illustrator", "Inter Font", "Mobile UI"]
+  },
+  {
     "id": 13,
     "title": "Logo Design & Brand Identity",
     "type": "graphic",

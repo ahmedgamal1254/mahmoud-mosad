@@ -94,6 +94,21 @@ const FALLBACK_PROJECTS = [
     "tools": ["Figma", "Adobe Illustrator", "Gamification UI"]
   },
   {
+    "id": 3,
+    "title": "Snake - Music Streaming App",
+    "slug": "music",
+    "type": "ui-ux",
+    "category": "Ui Ux Design",
+    "platform": "Mobile App",
+    "role": "Ui Ux Designer",
+    "image": "imgs/projects/uiux/music/index.webp",
+    "frameImage": "imgs/projects/uiux/music/frame.webp",
+    "link": "project.html?id=3",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "overview": "Snake is a next-gen music streaming app designed to deliver immersive listening experiences with a sleek, intuitive and emotion-driven interface.",
+    "tools": ["Figma", "Adobe Illustrator", "Inter Font", "Mobile UI"]
+  },
+  {
     "id": 13,
     "title": "Logo Design & Brand Identity",
     "type": "graphic",
@@ -506,16 +521,24 @@ async function loadData() {
   let experiences = FALLBACK_EXPERIENCES;
 
   try {
-    const [projRes, expRes] = await Promise.all([
-      fetch('projects.json'),
-      fetch('experience.json')
+    const [projRes, expRes, uiuxRes] = await Promise.all([
+      fetch('projects.json').catch(() => null),
+      fetch('experience.json').catch(() => null),
+      fetch('uiux.json').catch(() => null)
     ]);
 
-    if (projRes.ok) {
+    if (projRes && projRes.ok) {
       projects = await projRes.json();
     }
-    if (expRes.ok) {
+    if (expRes && expRes.ok) {
       experiences = await expRes.json();
+    }
+    if (uiuxRes && uiuxRes.ok) {
+      const uiuxData = await uiuxRes.json();
+      if (Array.isArray(uiuxData) && uiuxData.length > 0) {
+        const nonUiUx = projects.filter(p => p.type !== 'ui-ux');
+        projects = [...uiuxData, ...nonUiUx];
+      }
     }
   } catch (err) {
     console.info('Loaded data from fallback cache (file protocol or fetch unavailable):', err);

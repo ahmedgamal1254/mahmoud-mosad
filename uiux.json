@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "title": "Website E-commerce Clothing",
+    "slug": "clothes",
+    "type": "ui-ux",
+    "subtitle": "A&M Modern Fashion E-Commerce Platform UI/UX Case Study",
+    "category": "Ui Ux Design",
+    "platform": "Website",
+    "role": "Ui Ux Designer",
+    "overview": "نظرة عامة على المشروع: هي منصة أزياء إلكترونية حديثة تهدف إلى توفير تجربة تسوق سهلة وسريعة وممتعة للملابس للرجال والنساء والأطفال، مع التركيز على تجربة مستخدم بصرية سهلة وموحدة وواضحة.",
+    "tools": ["Figma", "Adobe Illustrator", "Cairo Font", "UI/UX Research"],
+    "image": "imgs/projects/uiux/clothes/index.png",
+    "frameImage": "imgs/projects/uiux/clothes/frame.webp",
+    "link": "project.html?id=1",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "likes": 142
+  },
+  {
+    "id": 2,
+    "title": "Katkooti App Redesign",
+    "slug": "katkoty",
+    "type": "ui-ux",
+    "subtitle": "Gamified Islamic Habits & Daily Tasks for Children",
+    "category": "Ui Ux Design",
+    "platform": "Mobile App",
+    "role": "Ui Ux Designer",
+    "overview": "UI/UX Case Study: turning a child's daily Islamic habits into a game they want to play. Katkooti helps children build everyday habits through small daily tasks, Quran reading progress, gratitude and rewards, guided by a friendly chick character.",
+    "tools": ["Figma", "Adobe Illustrator", "Gamification UI"],
+    "image": "imgs/projects/uiux/katkoty/index.png",
+    "frameImage": "imgs/projects/uiux/katkoty/frame.webp",
+    "link": "project.html?id=2",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "likes": 186
+  },
+  {
+    "id": 3,
+    "title": "Snake - Music Streaming App",
+    "slug": "music",
+    "type": "ui-ux",
+    "subtitle": "Next-Gen Music Streaming & Personalized Audio Experience",
+    "category": "Ui Ux Design",
+    "platform": "Mobile App",
+    "role": "Ui Ux Designer",
+    "overview": "UI/UX Case Study: Snake is a next-gen music streaming app designed to deliver immersive listening experiences with a sleek, intuitive and emotion-driven interface. To create a seamless music experience that allows users to discover, play and personalize music effortlessly.",
+    "tools": ["Figma", "Adobe Illustrator", "Inter Font", "Mobile UI"],
+    "image": "imgs/projects/uiux/music/index.webp",
+    "frameImage": "imgs/projects/uiux/music/frame.webp",
+    "link": "project.html?id=3",
+    "icon": "https://c.animaapp.com/faqgcqcH/img/akar-icons-arrow-up-right-8.svg",
+    "likes": 165
+  }
+]

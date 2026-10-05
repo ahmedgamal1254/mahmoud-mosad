@@ -216,42 +216,100 @@
 
     <!-- Case Study Data & Interactive Logic -->
     <script>
-        const UIUX_PROJECTS = {
-            "1": {
+        // Embedded fallback for local offline / file:// protocol execution
+        const FALLBACK_UIUX_PROJECTS = [
+            {
                 id: 1,
                 slug: "clothes",
                 title: "Website E-commerce Clothing",
                 subtitle: "A&M Modern Fashion E-Commerce Platform UI/UX Case Study",
-                arabicOverview: "نظرة عامة على المشروع: هي منصة أزياء إلكترونية حديثة تهدف إلى توفير تجربة تسوق سهلة وسريعة وممتعة للملابس للرجال والنساء والأطفال، مع التركيز على تجربة مستخدم بصرية سهلة وموحدة وواضحة.",
+                overview: "نظرة عامة على المشروع: هي منصة أزياء إلكترونية حديثة تهدف إلى توفير تجربة تسوق سهلة وسريعة وممتعة للملابس للرجال والنساء والأطفال، مع التركيز على تجربة مستخدم بصرية سهلة وموحدة وواضحة.",
                 category: "Ui Ux Design",
                 platform: "Website",
                 role: "Ui Ux Designer",
                 tools: "Figma, Adobe Illustrator, Cairo Font",
-                coverImage: "imgs/projects/uiux/clothes/index.png",
+                image: "imgs/projects/uiux/clothes/index.png",
                 frameImage: "imgs/projects/uiux/clothes/frame.webp",
-                likes: 142,
-                otherProjectId: 2
+                likes: 142
             },
-            "2": {
+            {
                 id: 2,
                 slug: "katkoty",
                 title: "Katkooti App Redesign",
                 subtitle: "Gamified Islamic Habits & Daily Tasks for Children",
-                arabicOverview: "UI/UX Case Study: turning a child's daily Islamic habits into a game they want to play. Katkooti helps children build everyday habits through small daily tasks, Quran reading progress, gratitude and rewards, guided by a friendly chick character.",
+                overview: "UI/UX Case Study: turning a child's daily Islamic habits into a game they want to play. Katkooti helps children build everyday habits through small daily tasks, Quran reading progress, gratitude and rewards, guided by a friendly chick character.",
                 category: "Ui Ux Design",
                 platform: "Mobile App",
                 role: "Ui Ux Designer",
                 tools: "Figma, Adobe Illustrator, Gamification UI",
-                coverImage: "imgs/projects/uiux/katkoty/index.png",
-                frameImage: "imgs/projects/uiux/katkoty/frame.svg",
-                likes: 186,
-                otherProjectId: 1
+                image: "imgs/projects/uiux/katkoty/index.png",
+                frameImage: "imgs/projects/uiux/katkoty/frame.webp",
+                likes: 186
+            },
+            {
+                id: 3,
+                slug: "music",
+                title: "Snake - Music Streaming App",
+                subtitle: "Next-Gen Music Streaming & Personalized Audio Experience",
+                overview: "UI/UX Case Study: Snake is a next-gen music streaming app designed to deliver immersive listening experiences with a sleek, intuitive and emotion-driven interface. To create a seamless music experience that allows users to discover, play and personalize music effortlessly.",
+                category: "Ui Ux Design",
+                platform: "Mobile App",
+                role: "Ui Ux Designer",
+                tools: "Figma, Adobe Illustrator, Inter Font",
+                image: "imgs/projects/uiux/music/index.webp",
+                frameImage: "imgs/projects/uiux/music/frame.webp",
+                likes: 165
             }
-        };
+        ];
 
-        // Aliases
-        UIUX_PROJECTS["clothes"] = UIUX_PROJECTS["1"];
-        UIUX_PROJECTS["katkoty"] = UIUX_PROJECTS["2"];
+        let uiuxProjectsList = FALLBACK_UIUX_PROJECTS;
+        let uiuxProjectsMap = {};
+
+        function rebuildMap(list) {
+            uiuxProjectsMap = {};
+            list.forEach((p, idx) => {
+                const item = { ...p };
+                if (Array.isArray(item.tools)) item.tools = item.tools.join(', ');
+                uiuxProjectsMap[String(item.id)] = item;
+                if (item.slug) uiuxProjectsMap[item.slug] = item;
+                
+                // Automatic cyclic next project link
+                const next = list[(idx + 1) % list.length];
+                item.nextProjectId = next ? next.id : null;
+            });
+            // Aliases
+            if (uiuxProjectsMap["music"]) {
+                uiuxProjectsMap["snake"] = uiuxProjectsMap["music"];
+            }
+        }
+        rebuildMap(uiuxProjectsList);
+
+        async function fetchUiUxProjects() {
+            try {
+                // Try fetching dedicated uiux.json first
+                let res = await fetch('uiux.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data) && data.length > 0) {
+                        uiuxProjectsList = data;
+                        rebuildMap(uiuxProjectsList);
+                        return;
+                    }
+                }
+                // Fallback to projects.json
+                res = await fetch('projects.json');
+                if (res.ok) {
+                    const data = await res.json();
+                    const filtered = data.filter(p => p.type === 'ui-ux');
+                    if (filtered.length > 0) {
+                        uiuxProjectsList = filtered;
+                        rebuildMap(uiuxProjectsList);
+                    }
+                }
+            } catch (err) {
+                console.info('Loaded UI/UX projects from fallback cache:', err);
+            }
+        }
 
         // Determine current project
         function getProjectIdFromUrl() {
@@ -262,7 +320,7 @@
             const hash = window.location.hash.replace('#', '').trim();
             if (hash) return hash;
 
-            return "1"; // Default to clothes
+            return "1"; // Default to first project
         }
 
         let currentProject = null;
@@ -270,8 +328,10 @@
 
         function loadProject() {
             const rawId = getProjectIdFromUrl();
-            currentProject = UIUX_PROJECTS[rawId] || UIUX_PROJECTS["1"];
-            const otherProject = UIUX_PROJECTS[currentProject.otherProjectId];
+            currentProject = uiuxProjectsMap[rawId] || uiuxProjectsList[0];
+            if (!currentProject) return;
+
+            const otherProject = currentProject.nextProjectId ? uiuxProjectsMap[String(currentProject.nextProjectId)] : null;
 
             // Update document title
             document.title = `${currentProject.title} - Behance UI/UX Case Study | Mahmoud Mosad`;
@@ -290,7 +350,7 @@
             const heroTitle = document.getElementById('hero-project-title');
             if (heroTitle) heroTitle.textContent = currentProject.title;
             const heroSub = document.getElementById('hero-project-subtitle');
-            if (heroSub) heroSub.textContent = currentProject.arabicOverview;
+            if (heroSub) heroSub.textContent = currentProject.arabicOverview || currentProject.overview;
             const heroRole = document.getElementById('hero-role');
             if (heroRole) heroRole.textContent = currentProject.role;
             const heroPlatform = document.getElementById('hero-platform');
@@ -407,8 +467,9 @@
             });
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', async () => {
             initMobileDrawer();
+            await fetchUiUxProjects();
             loadProject();
         });
         window.addEventListener('hashchange', loadProject);
