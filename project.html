@@ -26,11 +26,15 @@
         }
     </script>
     <style>
+        html {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
         body {
             background-color: #0d0d0d;
             color: #ffffff;
             font-family: 'Geist', sans-serif;
-            overflow-x: hidden;
+            overflow: visible;
         }
         .presentation-frame {
             box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -47,7 +51,7 @@
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col bg-[#101010] text-white overflow-x-hidden">
+<body class="min-h-screen flex flex-col bg-[#101010] text-white">
     <!-- Mobile Navigation Drawer Backdrop -->
     <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
@@ -140,7 +144,7 @@
 
         <!-- Behance Case Study Image Presentation Container -->
         <section class="w-full bg-[#101010] py-6 sm:py-12 px-2 sm:px-6 lg:px-8 border-y border-white/5">
-            <div class="w-full max-w-[1400px] mx-auto flex flex-col items-center">
+            <div class="w-full max-w-[992px] mx-auto flex flex-col items-center">
                 <!-- Case study image loaded at full crisp resolution -->
                 <div class="w-full presentation-frame rounded-xl sm:rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10 shadow-2xl">
                     <img id="case-study-img" 
