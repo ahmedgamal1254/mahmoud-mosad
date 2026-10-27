@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="styleguide.css">
     <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -134,9 +135,17 @@
     <!-- Main Behance Presentation Content -->
     <main class="w-full flex flex-col items-center flex-1 mt-[120px] sm:mt-[140px] md:mt-[150px]">
         <!-- Project Hero Header Section -->
-        <section class="w-full max-w-[1280px] mx-auto pt-10 sm:pt-14 pb-8 sm:pb-12 px-4 sm:px-8 text-center flex flex-col items-center">
+        <section class="w-full max-w-[1280px] mx-auto pt-6 sm:pt-10 pb-8 sm:pb-12 px-4 sm:px-8 text-center flex flex-col items-center">
+            <!-- Back to Projects Link (Aligned to the Right) -->
+            <div class="w-full flex items-center justify-end mb-6 wow animate__fadeInRight" data-wow-duration="0.8s">
+                <a href="index.html#projects" onclick="if(window.history.length > 1) { window.history.back(); return false; }" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-[#8d8c89] hover:text-white border border-white/10 text-sm font-medium transition-all group cursor-pointer">
+                    <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform duration-200"></i>
+                    <span>Back to Projects</span>
+                </a>
+            </div>
+
             <!-- Main Project Title -->
-            <h1 id="hero-project-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-[900px] leading-tight">
+            <h1 id="hero-project-title" class="wow animate__fadeInDown text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-[900px] leading-tight" data-wow-duration="0.9s">
                 Project Title
             </h1>
 
@@ -146,7 +155,7 @@
         <section class="w-full bg-[#101010] py-6 sm:py-12 px-2 sm:px-6 lg:px-8 border-y border-white/5">
             <div class="w-full max-w-[992px] mx-auto flex flex-col items-center">
                 <!-- Case study image loaded at full crisp resolution -->
-                <div class="w-full presentation-frame rounded-xl sm:rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10 shadow-2xl">
+                <div class="wow animate__fadeInUp w-full presentation-frame rounded-xl sm:rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10 shadow-2xl" data-wow-duration="1s" data-wow-offset="50">
                     <img id="case-study-img" 
                          src="" 
                          alt="Case Study Presentation" 
@@ -159,7 +168,7 @@
         <!-- Behance Interaction & Appreciation Footer Section -->
         <section class="w-full max-w-[1280px] mx-auto py-16 sm:py-24 px-4 sm:px-8 flex flex-col items-center text-center">
             <!-- Author Card -->
-            <div class="w-full max-w-[720px] p-6 sm:p-8 rounded-2xl bg-[#1a1a1a] border border-white/5 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 text-center sm:text-left">
+            <div class="wow animate__fadeInLeft w-full max-w-[720px] p-6 sm:p-8 rounded-2xl bg-[#1a1a1a] border border-white/5 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 text-center sm:text-left" data-wow-duration="0.9s">
                 <img class="w-20 h-20 rounded-2xl aspect-[1] object-cover bg-[#242424] border border-white/10 shrink-0" src="imgs/about.svg" alt="Mahmoud Mosad" />
                 <div class="flex flex-col gap-2 flex-1">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -179,7 +188,7 @@
 
             <!-- Switcher: View Other Project / Back to Portfolio -->
             <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-[720px]">
-                <a id="other-project-card" href="#" class="w-full sm:flex-1 p-5 rounded-2xl bg-[#1a1a1a] hover:bg-[#222222] border border-white/5 hover:border-white/20 transition-all flex items-center justify-between group cursor-pointer text-left">
+                <a id="other-project-card" href="#" class="wow animate__fadeInLeft w-full sm:flex-1 p-5 rounded-2xl bg-[#1a1a1a] hover:bg-[#222222] border border-white/5 hover:border-white/20 transition-all flex items-center justify-between group cursor-pointer text-left" data-wow-duration="0.8s">
                     <div class="flex flex-col gap-1 min-w-0">
                         <span class="text-xs uppercase tracking-wider text-[#8d8c89] font-medium [font-family:'Geist',Helvetica]">Other Project</span>
                         <span id="other-project-title" class="font-bold text-white text-base truncate group-hover:text-white transition-colors [font-family:'Geist',Helvetica]">Project Name</span>
@@ -190,7 +199,7 @@
                     </div>
                 </a>
 
-                <a href="index.html#projects" class="w-full sm:w-auto px-6 py-5 rounded-2xl bg-[#1a1a1a] hover:bg-white text-[#d0d0d0] hover:text-black font-bold text-sm transition-all border border-white/5 hover:border-white/20 flex items-center justify-center gap-2 group cursor-pointer whitespace-nowrap">
+                <a href="index.html#projects" class="wow animate__fadeInRight w-full sm:w-auto px-6 py-5 rounded-2xl bg-[#1a1a1a] hover:bg-white text-[#d0d0d0] hover:text-black font-bold text-sm transition-all border border-white/5 hover:border-white/20 flex items-center justify-center gap-2 group cursor-pointer whitespace-nowrap" data-wow-duration="0.8s">
                     <i class="fa-solid fa-grid-2 text-xs"></i>
                     <span>All Projects</span>
                 </a>
@@ -199,7 +208,7 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="w-full border-t border-white/10 bg-[#0a0a0a] py-8 px-4 text-center">
+    <footer class="wow animate__fadeIn w-full border-t border-white/10 bg-[#0a0a0a] py-8 px-4 text-center">
         <div class="flex flex-col items-center justify-center gap-3 max-w-[1280px] mx-auto text-[#8d8c89] text-sm">
             <div class="flex items-center gap-4">
                 <a href="https://www.behance.net/kingoftheworld" target="_blank" rel="noopener" aria-label="Behance" class="footer-social-link w-10 h-10 rounded-full bg-[#181818] hover:bg-white hover:text-black flex items-center justify-center text-sm transition-all" style="color: #8d8c89;"><i class="fa-brands fa-behance"></i></a>
@@ -217,6 +226,9 @@
     <a href="https://wa.link/65p25n" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-8 right-8 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
         <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
     </a>
+
+    <!-- WOW.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
     <!-- Case Study Data & Interactive Logic -->
     <script>
@@ -471,8 +483,21 @@
             });
         }
 
+        function initWow() {
+            if (typeof WOW !== 'undefined') {
+                new WOW({
+                    boxClass: 'wow',
+                    animateClass: 'animate__animated',
+                    offset: 50,
+                    mobile: true,
+                    live: true
+                }).init();
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', async () => {
             initMobileDrawer();
+            initWow();
             await fetchUiUxProjects();
             loadProject();
         });
