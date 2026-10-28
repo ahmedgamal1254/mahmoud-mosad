@@ -464,27 +464,9 @@ input:focus, textarea:focus, select:focus {
     .reveal,
     .reveal-up,
     .reveal-left,
-    .reveal-right,
-    .wow {
+    .reveal-right {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
-        animation: none !important;
-        visibility: visible !important;
     }
-}
-
-/* WOW.js & Animate.css Custom Smooth Timing */
-.animate__animated {
-    -webkit-animation-duration: 0.85s;
-    animation-duration: 0.85s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.animate__animated.animate__fadeInLeft,
-.animate__animated.animate__fadeInRight,
-.animate__animated.animate__fadeInUp,
-.animate__animated.animate__fadeInDown {
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }

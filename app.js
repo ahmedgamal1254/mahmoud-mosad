@@ -398,13 +398,9 @@ function createProjectCardHtml(project, index = 0) {
          </button>`);
 
   const delayClass = (index % 3 === 1) ? 'delay-100' : (index % 3 === 2) ? 'delay-200' : '';
-  const wowDelay = `${((index % 3) * 0.15).toFixed(2)}s`;
-  const animType = isUiUx
-    ? (index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight')
-    : (index % 3 === 0 ? 'animate__fadeInLeft' : (index % 3 === 1 ? 'animate__fadeInUp' : 'animate__fadeInRight'));
 
   return `
-    <div onclick="${cardOnClick}" class="wow ${animType} project-card ${delayClass} group cursor-pointer flex flex-col w-full items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-white/20" data-wow-delay="${wowDelay}" data-wow-duration="0.8s">
+    <div onclick="${cardOnClick}" class="reveal-up project-card ${delayClass} group cursor-pointer flex flex-col w-full items-start gap-4 p-4 relative bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-white/20">
         <div class="project-card-image relative self-stretch w-full h-[220px] sm:h-[262px] rounded-lg bg-cover bg-[50%_50%] overflow-hidden bg-[#242424]" style="background-image: url('${coverImage}');">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
             ${countBadgeHtml ? `<div class="absolute top-3 right-3 shadow-md">${countBadgeHtml}</div>` : ''}
@@ -450,9 +446,6 @@ function renderProjects(projects) {
   }
 
   initRevealObserver();
-  if (window.wowInstance && typeof window.wowInstance.sync === 'function') {
-    window.wowInstance.sync();
-  }
 }
 
 function renderExperiences(experiences) {
@@ -463,11 +456,9 @@ function renderExperiences(experiences) {
     const isLast = index === experiences.length - 1;
     const dividerHtml = isLast ? '' : `<div class="w-full h-px bg-white/10 my-8 sm:my-12"></div>`;
     const delayClass = index > 0 ? `delay-${Math.min(index * 100, 300)}` : '';
-    const wowAnim = index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight';
-    const wowDelay = `${(index * 0.1).toFixed(2)}s`;
 
     return `
-      <div class="wow ${wowAnim} experience-item ${delayClass} flex flex-col items-start gap-5 sm:gap-6 relative w-full" data-wow-delay="${wowDelay}" data-wow-duration="0.85s">
+      <div class="reveal-up experience-item ${delayClass} flex flex-col items-start gap-5 sm:gap-6 relative w-full">
           <!-- Company Logo & Name -->
           <div class="inline-flex items-center gap-3.5 sm:gap-5 relative">
               <img class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl aspect-[1] object-cover shrink-0 border border-white/10 bg-[#242424]" src="${exp.logo}" alt="${exp.company}" />
@@ -768,24 +759,9 @@ function initRevealObserver() {
   });
 }
 
-// WOW.js Initialization (Smooth Scroll Reveal Animations)
-function initWow() {
-  if (typeof WOW !== 'undefined') {
-    window.wowInstance = new WOW({
-      boxClass: 'wow',
-      animateClass: 'animate__animated',
-      offset: 50,
-      mobile: true,
-      live: true
-    });
-    window.wowInstance.init();
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initRevealObserver();
-  initWow();
   initMobileDrawer();
   initScrollSpy();
   loadData();
