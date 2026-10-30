@@ -565,21 +565,21 @@ function handleContactSubmit(event) {
 
   const statusEl = document.getElementById('form-status');
   if (statusEl) {
-    statusEl.textContent = 'Opening your email client... Thank you!';
+    statusEl.textContent = 'Redirecting to WhatsApp... Thank you!';
     statusEl.classList.remove('hidden');
   }
 
-  const subject = encodeURIComponent(`Project Inquiry: ${projectType} - ${name}`);
-  const body = encodeURIComponent(
-    `Hello Mahmoud,\n\nI am contacting you regarding: ${projectType}\n\nClient Name: ${name}\nEmail: ${email}\n\nProject Goals / Details:\n${message}\n\nBest regards,\n${name}`
+  const text = encodeURIComponent(
+    `Hello Mahmoud,\n\n*New Project Inquiry*\n• *Name:* ${name}\n• *Email:* ${email}\n• *Service:* ${projectType}\n\n*Project Goals / Details:*\n${message}`
   );
 
-  window.location.href = `mailto:mahmoudmosad632@gmail.com?subject=${subject}&body=${body}`;
+  const whatsappUrl = `https://wa.me/201006851519?text=${text}`;
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
   setTimeout(() => {
     form.reset();
     if (statusEl) {
-      statusEl.textContent = 'Message ready in your email app!';
+      statusEl.textContent = 'Message opened in WhatsApp!';
       setTimeout(() => statusEl.classList.add('hidden'), 4000);
     }
   }, 1000);
