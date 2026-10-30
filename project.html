@@ -11,6 +11,32 @@
     <link rel="stylesheet" href="styleguide.css">
     <link rel="icon" type="image/svg+xml" href="imgs/logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script>
+        // Preload targeted case study image immediately based on URL to prevent any blank image flash
+        (function() {
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var rawId = params.get('id') || params.get('project') || window.location.hash.replace('#', '') || '1';
+                var imgMap = {
+                    '1': 'imgs/projects/uiux/clothes/frame.webp',
+                    'clothes': 'imgs/projects/uiux/clothes/frame.webp',
+                    '2': 'imgs/projects/uiux/katkoty/frame.webp',
+                    'katkoty': 'imgs/projects/uiux/katkoty/frame.webp',
+                    '3': 'imgs/projects/uiux/music/frame.webp',
+                    'music': 'imgs/projects/uiux/music/frame.webp',
+                    'snake': 'imgs/projects/uiux/music/frame.webp'
+                };
+                var targetImg = imgMap[rawId] || imgMap['1'];
+                if (targetImg) {
+                    var link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = targetImg;
+                    document.head.appendChild(link);
+                }
+            } catch(e) {}
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -136,7 +162,7 @@
         <!-- Project Hero Header Section -->
         <section class="w-full max-w-[1280px] mx-auto pt-6 sm:pt-10 pb-8 sm:pb-12 px-4 sm:px-8 text-center flex flex-col items-center">
             <!-- Back to Projects Link (Aligned to the Right) -->
-            <div class="w-full flex items-center justify-end mb-6 reveal-right">
+            <div class="w-full flex items-center justify-end mb-6 reveal-right is-visible">
                 <a href="index.html#projects" onclick="if(window.history.length > 1) { window.history.back(); return false; }" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-[#8d8c89] hover:text-white border border-white/10 text-sm font-medium transition-all group cursor-pointer">
                     <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform duration-200"></i>
                     <span>Back to Projects</span>
@@ -144,21 +170,19 @@
             </div>
 
             <!-- Main Project Title -->
-            <h1 id="hero-project-title" class="reveal-up text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-[900px] leading-tight">
-                Project Title
-            </h1>
+            <h1 id="hero-project-title" class="reveal-up is-visible text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-[900px] leading-tight min-h-[1.2em]"></h1>
 
         </section>
 
         <!-- Behance Case Study Image Presentation Container -->
-        <section class="w-full bg-[#101010] py-6 sm:py-12 px-2 sm:px-6 lg:px-8 border-y border-white/5">
-            <div class="w-full max-w-[992px] mx-auto flex flex-col items-center">
+        <section class="w-full bg-[#101010] py-6 sm:py-12 px-4 sm:px-6 border-y border-white/5">
+            <div class="w-full max-w-[1280px] mx-auto flex flex-col items-center">
                 <!-- Case study image loaded at full crisp resolution -->
-                <div class="reveal-up w-full presentation-frame rounded-xl sm:rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10 shadow-2xl">
+                <div class="reveal-up is-visible w-full presentation-frame rounded-xl sm:rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10 shadow-2xl min-h-[350px]">
                     <img id="case-study-img" 
                          src="" 
                          alt="Case Study Presentation" 
-                         class="w-full h-auto block select-none" 
+                         class="w-full h-auto block select-none transition-opacity duration-300" 
                          loading="eager" />
                 </div>
             </div>
@@ -190,8 +214,8 @@
                 <a id="other-project-card" href="#" class="reveal-left w-full sm:flex-1 p-5 rounded-2xl bg-[#1a1a1a] hover:bg-[#222222] border border-white/5 hover:border-white/20 transition-all flex items-center justify-between group cursor-pointer text-left">
                     <div class="flex flex-col gap-1 min-w-0">
                         <span class="text-xs uppercase tracking-wider text-[#8d8c89] font-medium [font-family:'Geist',Helvetica]">Other Project</span>
-                        <span id="other-project-title" class="font-bold text-white text-base truncate group-hover:text-white transition-colors [font-family:'Geist',Helvetica]">Project Name</span>
-                        <span id="other-project-platform" class="text-xs text-[#8d8c89] [font-family:'Geist',Helvetica]">Platform</span>
+                        <span id="other-project-title" class="font-bold text-white text-base truncate group-hover:text-white transition-colors [font-family:'Geist',Helvetica]"></span>
+                        <span id="other-project-platform" class="text-xs text-[#8d8c89] [font-family:'Geist',Helvetica]"></span>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-[#262626] group-hover:bg-[#383838] text-white flex items-center justify-center transition-all shrink-0 ml-3">
                         <i class="fa-solid fa-arrow-right text-sm"></i>
@@ -382,8 +406,10 @@
 
             // Case study image
             const imgEl = document.getElementById('case-study-img');
-            if (imgEl) {
-                imgEl.src = currentProject.frameImage;
+            if (imgEl && currentProject.frameImage) {
+                if (!imgEl.src.endsWith(currentProject.frameImage)) {
+                    imgEl.src = currentProject.frameImage;
+                }
                 imgEl.alt = `${currentProject.title} Case Study Presentation`;
             }
 
@@ -492,17 +518,25 @@
                         entry.target.classList.add('is-visible');
                     }
                 });
-            }, { rootMargin: '0px 0px -30px 0px', threshold: 0.1 });
+            }, { rootMargin: '0px 0px -20px 0px', threshold: 0 });
             elements.forEach(el => observer.observe(el));
         }
 
-        window.addEventListener('DOMContentLoaded', async () => {
-            initMobileDrawer();
-            initRevealObserver();
-            await fetchUiUxProjects();
+        // 1. Synchronous Instant Render: executes immediately as HTML parser reaches script
+        // Eliminates any FOUT / flash of empty or placeholder data
+        loadProject();
+        initMobileDrawer();
+        initRevealObserver();
+
+        // 2. Background Revalidation (Stale-While-Revalidate)
+        // Silently checks uiux.json for updates without delaying page display
+        fetchUiUxProjects().then(() => {
             loadProject();
         });
+
+        // 3. Instant Hash & History Navigation
         window.addEventListener('hashchange', loadProject);
+        window.addEventListener('popstate', loadProject);
     </script>
 </body>
 </html>

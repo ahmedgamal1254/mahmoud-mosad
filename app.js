@@ -516,6 +516,14 @@ async function loadData() {
   let projects = FALLBACK_PROJECTS;
   let experiences = FALLBACK_EXPERIENCES;
 
+  // Instant render with synchronous cache data to eliminate any empty section flash
+  if (!allLoadedProjects || allLoadedProjects.length === 0) {
+    allLoadedProjects = projects;
+    renderProjects(projects);
+    renderExperiences(experiences);
+    initFancybox();
+  }
+
   try {
     const [projRes, expRes, uiuxRes] = await Promise.all([
       fetch('projects.json').catch(() => null),
